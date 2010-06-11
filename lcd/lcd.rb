@@ -3,6 +3,10 @@ class LCD
     @number = value
   end
 
+  def self.make_digit leds
+    return " -- \n"
+  end
+
   def to_s
     if @number==0
         " -- \n|  |\n|  |\n    \n|  |\n|  |\n -- \n"
