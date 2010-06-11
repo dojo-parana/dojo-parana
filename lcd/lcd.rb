@@ -4,7 +4,17 @@ class LCD
   end
 
   def self.make_digit leds
-    return " -- \n"
+    if leds[0] == 0
+       retorno = "    \n"
+    elsif leds[0] == 1
+        retorno = " -- \n"
+    end
+    if leds[1] == 0
+        retorno += "    \n    \n"
+    elsif leds[1] == 1
+        retorno += "|   \n|   \n"
+    end
+    return retorno
   end
 
   def to_s
