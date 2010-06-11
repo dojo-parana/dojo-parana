@@ -10,7 +10,10 @@ class LCDTest < Test::Unit::TestCase
     assert_equal(LCD.new(0).to_s," -- \n|  |\n|  |\n    \n|  |\n|  |\n -- \n")
   end
   def test_um_caracter_1
-    assert_equal(LCD.new(1).to_s,"   |\n   |\n   |\n    \n   |\n   |\n   |\n")
+    assert_equal(LCD.new(1).to_s,"    \n   |\n   |\n    \n   |\n   |\n    \n")
+  end
+  def test_um_caracter_2
+    assert_equal(LCD.new(2).to_s," -- \n   |\n   |\n -- \n|   \n|   \n -- \n")
   end
 
   
