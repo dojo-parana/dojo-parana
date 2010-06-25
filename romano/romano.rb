@@ -13,9 +13,11 @@ class Fixnum
       when 9
         "IX"
       when 10..13
-        "X" + "I"*(self-10)
+        "X" + (self-10).to_roman
       when 14
         "XIV"
+      when 19
+        "XIX"
       when 20
         "XX"
     end

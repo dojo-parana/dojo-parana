@@ -2,6 +2,8 @@ class Fixnum
  
   def to_roman
     case self
+      when 0
+        ""
       when 1..3
       	"I"*self
       when 4
@@ -11,7 +13,7 @@ class Fixnum
       when 9
         "IX"
       when 10..13
-        "X" + "I"*(self-10)
+        "X" + (self-10).to_roman
       when 14
         "XIV"
       when 20
