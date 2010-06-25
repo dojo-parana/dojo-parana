@@ -5,12 +5,8 @@ class Romano
 
   def to_roman
     case @numero
-      when 1
-	"I"
-      when 2
-        "II"
-      when 3
-	"III"
+      when 1..3
+	"I"*@numero
       when 4
         "IV"
     end    
