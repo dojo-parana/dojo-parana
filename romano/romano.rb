@@ -11,6 +11,8 @@ class Romano
         "II"
       when 3
 	"III"
+      when 4
+        "IV"
     end    
   end
 end
