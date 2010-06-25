@@ -13,6 +13,8 @@ class Romano
         "V"
       when 6
         "VI"
+      when 7
+        "VII"
     end    
   end
 end

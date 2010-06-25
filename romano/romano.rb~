@@ -11,6 +11,8 @@ class Romano
         "IV"
       when 5
         "V"
+      when 6
+        "VI"
     end    
   end
 end
