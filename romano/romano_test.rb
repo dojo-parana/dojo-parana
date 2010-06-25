@@ -2,6 +2,10 @@ require "test/unit"
 require "romano"
 
 class RomanoTest < Test::Unit::TestCase
+  def test_numero_0
+    assert_equal(0.to_roman, "")
+  end
+  
   def test_numero_1
     assert_equal(1.to_roman, "I")
   end

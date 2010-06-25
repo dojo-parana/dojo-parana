@@ -1,22 +1,17 @@
-class Romano
-  def initialize numero
-    @numero = numero
-    @roman = ""
-  end
-
+class Fixnum
+ 
   def to_roman
-  
-    case @numero
+    case self
       when 1..3
-      	"I"*@numero
+      	"I"*self
       when 4
         "IV"
       when 5..8
-        "V" + "I"*(@numero-5)
+        "V" + (self-5).to_roman
       when 9
         "IX"
       when 10..13
-        "X" + "I"*(@numero-10)
+        "X" + "I"*(self-10)
       when 14
         "XIV"
       when 20
