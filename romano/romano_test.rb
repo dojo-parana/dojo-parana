@@ -2,6 +2,17 @@ require "test/unit"
 require "romano"
 
 class RomanoTest < Test::Unit::TestCase
+  NUMEROS = {0 => "",
+             1 => "I",
+             3 => "III",
+             5 => "V",
+             6 => "VI",
+             10 => "X"}  
+
+  def test_numero
+    NUMEROS.each{|k,v|assert_equal(k.to_roman, v)}
+  end
+  
   def test_numero_0
     assert_equal(0.to_roman, "")
   end
