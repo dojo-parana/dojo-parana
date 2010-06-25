@@ -4,15 +4,14 @@ class Romano
   end
 
   def to_roman
-    if @numero >= 5 && @numero < 9
-      return "V" + "I"*(@numero-5)
-    end 
 
     case @numero
       when 1..3
       	"I"*@numero
       when 4
         "IV"
+      when 5..8
+        "V" + "I"*(@numero-5)
       when 9
         "IX"
       when 10

@@ -18,6 +18,8 @@ class Romano
         "X"
       when 11
         "XI"
+      when 20
+        "XX"
     end
   end
 end
