@@ -38,4 +38,8 @@ class RomanoTest < Test::Unit::TestCase
     assert_equal(Romano.new(9).to_roman, "IX")
   end
 
+  def test_numero_10
+    assert_equal(Romano.new(10).to_roman, "X")
+  end
+
 end

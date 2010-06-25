@@ -15,6 +15,8 @@ class Romano
         "IV"
       when 9
         "IX"
+      when 10
+        "X"
     end
   end
 end
