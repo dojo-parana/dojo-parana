@@ -4,6 +4,10 @@ class Romano
   end
 
   def to_roman
+    if @numero > 5
+      return "V" + "I"*(@numero-5)
+    end 
+
     case @numero
       when 1..3
       	"I"*@numero
