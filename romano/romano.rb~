@@ -13,6 +13,8 @@ class Romano
       	"I"*@numero
       when 4
         "IV"
+      when 9
+        "IX"
     end
   end
 end
