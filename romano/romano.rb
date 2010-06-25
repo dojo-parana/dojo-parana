@@ -6,11 +6,13 @@ class Romano
   def to_roman
     case @numero
       when 1..3
-	"I"*@numero
+      	"I"*@numero
       when 4
         "IV"
       when 5
         "V"
+      when 6
+        "VI"
     end    
   end
 end
