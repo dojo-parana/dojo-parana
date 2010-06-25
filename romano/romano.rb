@@ -16,6 +16,8 @@ class Romano
         "IX"
       when 10..13
         "X" + "I"*(@numero-10)
+      when 14
+        "XIV"
       when 20
         "XX"
     end
