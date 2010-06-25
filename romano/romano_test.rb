@@ -17,4 +17,8 @@ class RomanoTest < Test::Unit::TestCase
   def test_numero_4
     assert_equal(Romano.new(4).to_roman, "IV")
   end
+
+  def test_numero_5
+    assert_equal(Romano.new(5).to_roman, "V")
+  end
 end
