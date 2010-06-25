@@ -17,6 +17,8 @@ class Romano
         "IX"
       when 10
         "X"
+      when 11
+        "XI"
     end
   end
 end
