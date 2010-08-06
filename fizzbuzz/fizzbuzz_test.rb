@@ -13,4 +13,12 @@ class FizzbuzzTest < Test::Unit::TestCase
   def test_5_eh_buzz
     assert_equal(fizzbuzz(0,100)[5], "buzz")
   end
+
+  def test_15_eh_fizzbuzz
+    assert_equal(fizzbuzz(0, 100)[15], "fizzbuzz")
+  end
+
+  def test_8_eh_8
+     assert_equal(fizzbuzz(0, 100)[8], 8)
+  end
 end

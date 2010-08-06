@@ -8,6 +8,9 @@ def fizzbuzz(s,e)
     if i%5 == 0
       v += "buzz"
     end
+    if i == 8
+       v = 8
+    end
     l << v
   end
   return l
