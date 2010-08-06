@@ -21,4 +21,11 @@ class FizzbuzzTest < Test::Unit::TestCase
   def test_8_eh_8
      assert_equal(fizzbuzz(0, 100)[8], 8)
   end
+
+  def test_numero_eh_numero
+    for i in 0..100 
+       assert_equal (fizzbuzz(0,100)[i], i) unless 
+
+    end
+  end
 end
