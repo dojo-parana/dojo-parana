@@ -10,7 +10,7 @@ class PotterTest(unittest.TestCase):
   def test_create_potter(self):
     self.assertNotEqual(Potter(), None)
   def test_unico_livro(self):
-    self.assertEquals(Potter().preco([1]),8)
+    self.assertEquals(Potter().preco([[1,1]]),8)
 
 if __name__ == '__main__':
     unittest.main()
