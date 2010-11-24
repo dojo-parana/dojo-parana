@@ -34,5 +34,13 @@ class LCDTest < Test::Unit::TestCase
         assert(s[1].start_with?(" "))
         assert(s[2].start_with?(" "))
     end
+
+    def test_seg_dir1
+        s = LCD.make_digit([0, 0, 1, 0, 0, 0, 0]).lines.to_a   
+        assert(s[1].end_with?("|\n"))
+        assert(s[2].end_with?("|\n"))
+    end
+
+
   
 end

@@ -14,6 +14,15 @@ class LCD
     elsif leds[1] == 1
         retorno += "|   \n|   \n"
     end
+    if leds[2] == 0
+        retorno += "    \n    \n"
+    elsif leds[2] == 1
+        retorno += "|   \n|   \n"
+    end
+    if leds[3] == 0
+        retorno += "    \n    \n"
+    elsif leds[3] == 1
+        retorno += "   |\n   |\n"
     return retorno
   end
 
