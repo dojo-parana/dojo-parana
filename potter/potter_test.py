@@ -26,7 +26,7 @@ def preco(lista):
     res += len(lista) * min_qtd * PRECO * 0.90
     for i in xrange(3):
       lista[i][1] -= min_qtd
-    res += (lista[0][1] + lista[1][1] + lista[2][1]) * PRECO
+    res += sum(qtd for l,qtd in lista) * PRECO
 
     return res
   
