@@ -1,7 +1,7 @@
 import unittest
 
 PRECO = 8
-descontos = {2:0.95,3:0.90}
+DESCONTOS = {2:0.95,3:0.90}
 def preco(lista):
 
   if not lista:
@@ -12,7 +12,7 @@ def preco(lista):
     res = 0
 
     min_qtd = min(qtd for livro, qtd in lista)
-    res += len(lista) * min_qtd * PRECO * 0.95
+    res += len(lista) * min_qtd * PRECO * DESCONTOS[len(lista)]
     for i in xrange(len(lista)):
       lista[i][1] -= min_qtd
     res += sum(qtd for l,qtd in lista) * PRECO
@@ -23,7 +23,7 @@ def preco(lista):
     res = 0
 
     min_qtd = min(qtd for livro, qtd in lista)
-    res += len(lista) * min_qtd * PRECO * 0.90
+    res += len(lista) * min_qtd * PRECO * DESCONTOS[len(lista)]
     for i in xrange(len(lista)):
       lista[i][1] -= min_qtd
     res += sum(qtd for l,qtd in lista) * PRECO
