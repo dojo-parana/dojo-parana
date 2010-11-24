@@ -24,9 +24,8 @@ def preco(lista):
 
     min_qtd = min(qtd for livro, qtd in lista)
     res += len(lista) * min_qtd * PRECO * 0.90
-    lista[0][1] -= min_qtd
-    lista[1][1] -= min_qtd
-    lista[2][1] -= min_qtd
+    for i in xrange(3):
+      lista[i][1] -= min_qtd
     res += (lista[0][1] + lista[1][1] + lista[2][1]) * PRECO
 
     return res
