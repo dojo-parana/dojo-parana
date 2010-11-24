@@ -2,12 +2,22 @@ import unittest
 
 PRECO = 8
 def preco(lista):
+
   if not lista:
     return 0
   elif len(lista) == 1:
     return lista[0][1]*PRECO
-  elif len(lista) == 2:
-    return PRECO*0.95*2 + (lista[0][1] - 1) * PRECO 
+
+  res = 0
+  res += 2 * PRECO * 0.95
+  lista[0][1] -= 1
+  lista[1][1] -= 1
+  res += (lista[0][1] + lista[1][1]) * PRECO
+
+  return res
+  
+#  elif len(lista) == 2:
+#    return PRECO*0.95*2 + (lista[0][1] - 1) * PRECO 
 
 class PotterTest(unittest.TestCase):
 
