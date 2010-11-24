@@ -9,9 +9,11 @@ def preco(lista):
     return lista[0][1]*PRECO
 
   res = 0
-  res += 2 * PRECO * 0.95
-  lista[0][1] -= 1
-  lista[1][1] -= 1
+
+  min_qtd = min(qtd for livro, qtd in lista)
+  res += 2 * min_qtd * PRECO * 0.95
+  lista[0][1] -= min_qtd
+  lista[1][1] -= min_qtd
   res += (lista[0][1] + lista[1][1]) * PRECO
 
   return res
