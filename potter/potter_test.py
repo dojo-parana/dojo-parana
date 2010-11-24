@@ -7,18 +7,7 @@ def preco(lista):
   if not lista:
     return 0
   elif len(lista) == 1:
-    return lista[0][1]*PRECO
-  elif len(lista) == 2:
-    res = 0
-
-    min_qtd = min(qtd for livro, qtd in lista)
-    res += len(lista) * min_qtd * PRECO * DESCONTOS[len(lista)]
-    for i in xrange(len(lista)):
-      lista[i][1] -= min_qtd
-    res += sum(qtd for l,qtd in lista) * PRECO
-
-    return res
-  
+    return lista[0][1]*PRECO  
   else:
     res = 0
 
