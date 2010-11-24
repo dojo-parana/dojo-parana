@@ -41,6 +41,9 @@ class PotterTest(unittest.TestCase):
   def test_tres_livros_iguais(self):
     self.assertEquals(preco([[1,3]]), PRECO*3)
 
+  def test_vol1x3_vol2x2(self):
+    self.assertEquals(preco([[1,3], [2,2]]), (PRECO*4*0.95)+PRECO)
+
 if __name__ == '__main__':
     unittest.main()
     
