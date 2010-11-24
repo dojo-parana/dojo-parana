@@ -4,7 +4,7 @@ class Potter:
   def __init__(self):
     pass
   def preco(self,lista):
-    return 8
+    return lista[0][1]*8
 
 class PotterTest(unittest.TestCase):
   def test_create_potter(self):
