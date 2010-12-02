@@ -3,7 +3,7 @@ import unittest
 PRECO = 8
 DESCONTOS = {2:0.95,3:0.90}
 def preco(lista):
-
+  
   if not lista:
     return 0
   elif len(lista) == 1:
