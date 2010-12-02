@@ -34,9 +34,10 @@ class AnagramaTest(unittest.TestCase):
         self.assertEquals(read_word_list('wordlist.txt'), ['a', 'b'])
 
     def test_word_list(self):
-        word_list = ['aab','bbc','ac']
+        word_list = ['aab','bbc','ac', 'xy', 'xaa', 'aax']
         self.assertEquals(list(test_pairs(word_list,'xyz')), [])
-        self.assertEquals(list(test_pairs(word_list, 'ccaa')),[['ac', 'ac']]) 
+        self.assertEquals(list(test_pairs(word_list, 'ccaa')),[['ac', 'ac']])
+        self.assertEquals(list(test_pairs(word_list, 'xxaya')), [['xy', 'xaa'],['xy','aax'],['xaa','xy'],['aax','xy']])
 
 if __name__ == '__main__':
    unittest.main()
