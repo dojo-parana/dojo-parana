@@ -13,7 +13,12 @@ def read_word_list(file_name):
     return [x.strip() for x in fp]
 
 def test_pairs(word_list, chars):
-    return []
+    r = []
+    for word1 in word_list:
+        for word2 in word_list:
+            if test_anagram(word1, word2, chars):
+		r.append( [word1, word2] )
+    return r
 
 class AnagramaTest(unittest.TestCase):
     def test_anagram_test(self):
@@ -33,6 +38,7 @@ class AnagramaTest(unittest.TestCase):
     def test_word_list(self):
         word_list = ['aab','bbc','ac']
         self.assertEquals(test_pairs(word_list,'xyz'), [])
+        self.assertEquals(test_pairs(word_list, 'ccaa'),[['ac', 'ac']]) 
 
 if __name__ == '__main__':
    unittest.main()
