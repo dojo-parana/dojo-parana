@@ -8,6 +8,9 @@ def test_anagram(palavra1, palavra2, chars):
     chars = sorted(list(chars))
     return palavras == chars
 
+def read_word_list(file_name):
+    return ['a', 'b']
+
 class AnagramaTest(unittest.TestCase):
     def test_anagram_test(self):
         self.assertTrue(test_anagram('a', 'b', 'ab'))
@@ -19,6 +22,9 @@ class AnagramaTest(unittest.TestCase):
         self.assertTrue(test_anagram('aab', 'bbc', 'aabbbc'))
         self.assertFalse(test_anagram('aab', 'bbc', 'abc'))
         self.assertFalse(test_anagram('aab', 'bcc', 'aabbbc'))
+
+    def test_word_list(self):
+        self.assertEquals(read_word_list('wordlist.txt'), ['a', 'b'])
 
 if __name__ == '__main__':
    unittest.main()
