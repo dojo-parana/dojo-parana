@@ -10,8 +10,7 @@ def test_anagram(palavra1, palavra2, chars):
 
 def read_word_list(file_name):
     fp = open(file_name)
-    lines = fp.readlines()
-    return [x.strip() for x in lines]
+    return x.strip() for x in fp
 
 class AnagramaTest(unittest.TestCase):
     def test_anagram_test(self):
