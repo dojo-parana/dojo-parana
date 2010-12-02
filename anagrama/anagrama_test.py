@@ -17,7 +17,7 @@ def test_pairs(word_list, chars):
     for word1 in word_list:
         for word2 in word_list:
             if test_anagram(word1, word2, chars):
-		r.append( [word1, word2] )
+                r.append( [word1, word2] )
     return r
 
 class AnagramaTest(unittest.TestCase):
