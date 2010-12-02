@@ -4,10 +4,9 @@
 import unittest
 
 def test_anagram(palavra1, palavra2, chars):
-    for c in palavra1+palavra2:
-        if not c in chars:
-            return False
-    return len(palavra1+palavra2) == len(chars)
+    palavras = sorted(list(palavra1+palavra2))
+    chars = sorted(list(chars))
+    return palavras == chars
 
 class AnagramaTest(unittest.TestCase):
     def test_anagram_test(self):
@@ -19,6 +18,7 @@ class AnagramaTest(unittest.TestCase):
     def test_anagram_letras_repetidas(self):
         self.assertTrue(test_anagram('aab', 'bbc', 'aabbbc'))
         self.assertFalse(test_anagram('aab', 'bbc', 'abc'))
+        self.assertFalse(test_anagram('aab', 'bcc', 'aabbbc'))
 
 if __name__ == '__main__':
    unittest.main()
