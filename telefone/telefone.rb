@@ -7,12 +7,18 @@ class Telefone
     @content = @file.read
   end
   
-    def processar_linha s
-        if s == 'A' || s=='B' || s=='C'
-          "2"
-        else
-          '3'
-        end
+    def processar_caracter s
+        dicionario = {"A" => "2", "B" => "2", "C" => "2", 
+                      "D" => "3", "E" => "3", "F" => "3", 
+                      "G" => "4", "H" => "4", "I" => "4",
+                      "J" => "5", "K" => "5", "L" => "5", 
+                      "M" => "6", "N" => "6", "O" => "6", 
+                      "P" => "7", "Q" => "7", "R" => "7", "S" => "7", 
+                      "T" => "8", "U" => "8", "V" => "8",
+                      "W" => "9", "X" => "9", "Y" => "9", "Z" => "9",
+                      "1" => "1", "0" => "0",} 
+                      
+        dicionario[s]
     end 
 end
 
@@ -34,18 +40,21 @@ class TelefoneTest < Test::Unit::TestCase
   end
   
   def test_substituicao
-    assert_equal(Telefone.new.processar_linha("A"), "2")
+    assert_equal(Telefone.new.processar_caracter("A"), "2")
   end
   
   def test_substituicao_c
-    assert_equal(Telefone.new.processar_linha("C"), "2")
+    assert_equal(Telefone.new.processar_caracter("C"), "2")
   end
   
   def test_substituicao_d
-    assert_equal(Telefone.new.processar_linha("D"), "3")
+    assert_equal(Telefone.new.processar_caracter("D"), "3")
   end
   
   def test_substituicao_e
-    assert_equal(Telefone.new.processar_linha("E"), "3")
+    assert_equal(Telefone.new.processar_caracter("E"), "3")
+  end
+  def test_substituicao_w
+    assert_equal(Telefone.new.processar_caracter("W"), "9")
   end
 end
