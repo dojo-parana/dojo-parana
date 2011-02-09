@@ -16,13 +16,27 @@ class Telefone
                       "P" => "7", "Q" => "7", "R" => "7", "S" => "7", 
                       "T" => "8", "U" => "8", "V" => "8",
                       "W" => "9", "X" => "9", "Y" => "9", "Z" => "9",
-                      "1" => "1", "0" => "0",} 
+                      "1" => "1", "0" => "0", "-" => "-"} 
                       
-        dicionario[s]
+        dicionario[s.upcase]
     end 
+    
+    def processar_linha s 
+       linha = ""
+              
+       s.each_char {|i| linha += processar_caracter i}
+       
+       linha
+    end
 end
 
 class TelefoneTest < Test::Unit::TestCase
+  def test_processar_linha
+      assert_equal(Telefone.new.processar_linha("STAR-WARS"), "7827-9277")
+      assert_equal(Telefone.new.processar_linha("1-HOME-SWEET-HOME"), "1-4663-79338-4663")
+      assert_equal(Telefone.new.processar_linha("MY-MISERABLE-JOB"), "69-647372253-562")                  
+  end
+
   def test_create_telefone
     assert_not_nil(Telefone.new)
   end
