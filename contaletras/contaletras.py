@@ -14,6 +14,7 @@ class ContaLetras:
             1: 'um',
             2: 'dois',
             3: 'tres',
+            4: 'quatro',
         }
         
         return dicionario[numero]
@@ -28,7 +29,10 @@ class ContaLetrasTest(unittest.TestCase):
     def test_int_3_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(3), 'tres')
         
-     
+    def test_int_4_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(4), 'quatro')
+        
+            
         
 if __name__ == '__main__':
     unittest.main()    
