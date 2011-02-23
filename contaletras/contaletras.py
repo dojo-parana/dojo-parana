@@ -36,7 +36,7 @@ class ContaLetras:
             70: 'setenta',
             80: 'oitenta',
             90: 'noventa',
-            100: 'cem',
+            100: 'cento',
             200: 'duzentos',
             300: 'trezentos',
             400: 'quatrocentos',
@@ -48,8 +48,18 @@ class ContaLetras:
             1000: 'mil',
            
         }
-   
-        return dicionario[numero]
+        
+        if numero == 100:
+            return 'cem'
+        elif numero in dicionario:
+            return dicionario[numero]
+        elif numero>100:
+            pass
+            resto = numero % 100
+            #return dicionario[numero-resto] + ' e ' + dicionario[resto
+        else:
+            resto = numero % 10
+            return dicionario[numero-resto] + ' e ' + self.int_2_palavra(resto)
 
 
 class ContaLetrasTest(unittest.TestCase):
@@ -110,6 +120,8 @@ class ContaLetrasTest(unittest.TestCase):
     def test_int_1000_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(1000), 'mil')
         
+    def test_int_42_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(42), 'quarenta e dois')
 
 if __name__ == '__main__':
     unittest.main()    
