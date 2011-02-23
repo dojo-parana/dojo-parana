@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-
 '''
 Se os números de 1 a 5 fossem escritos em palavras: um, dois, três, quatro, cinco, então teríamos utilizado 2 + 4 + 4 + 6 + 5 = 21 letras no total.
 Se todos os números de 1 até 1000 fossem escritos em palavras, quantas letras nós teríamos utilizado?
@@ -22,14 +21,23 @@ class ContaLetras:
         }
         
         dezenas = {
-            0: 'dez',
-            1: 'onze',
+            10: 'dez',
+            11: 'onze',
+            12: 'doze', 
+            13: 'treze',                       
+            14: 'quatorze',            
+            15: 'quinze',
+            16: 'dezesseis',
+            17: 'dezessete',  
+            18: 'dezoito',
+            19: 'dezenove',              
+            
         }
         
         if numero < 10:
             return unidades[numero]
         elif numero < 20:
-            return dezenas[numero % 10]
+            return dezenas[numero]
 
 class ContaLetrasTest(unittest.TestCase):
     def test_int_1_para_palavra(self):      
@@ -64,6 +72,13 @@ class ContaLetrasTest(unittest.TestCase):
     
     def test_int_11_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(11), 'onze')
+   
+    def test_int_15_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(15), 'quinze')
+        
+    def test_int_19_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(19), 'dezenove')
+
 
 if __name__ == '__main__':
     unittest.main()    
