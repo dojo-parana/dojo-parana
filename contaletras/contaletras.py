@@ -32,6 +32,10 @@ class ContaLetras:
             30: 'trinta',
             40: 'quarenta',
             50: 'cinquenta',
+            60: 'sessenta',
+            70: 'setenta',
+            80: 'oitenta',
+            90: 'noventa',
            
         }
    
@@ -83,6 +87,9 @@ class ContaLetrasTest(unittest.TestCase):
 
     def test_int_50_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(50), 'cinquenta')
+
+    def test_int_90_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(90), 'noventa')
 
 if __name__ == '__main__':
     unittest.main()    
