@@ -9,8 +9,7 @@ import unittest
 
 class ContaLetras:
     def int_2_palavra(self, numero):
-
-        dicionario = {
+        unidades = {
             1: 'um',
             2: 'dois',
             3: 'tres',
@@ -22,7 +21,8 @@ class ContaLetras:
             9: 'nove',        
         }
         
-        return dicionario[numero]
+        if numero < 10:
+             return unidades[numero]
 
 class ContaLetrasTest(unittest.TestCase):
     def test_int_1_para_palavra(self):      
