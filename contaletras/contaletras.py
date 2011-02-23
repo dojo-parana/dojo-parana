@@ -22,13 +22,14 @@ class ContaLetras:
         }
         
         dezenas = {
-            10: 'dez'
+            0: 'dez',
+            1: 'onze',
         }
         
         if numero < 10:
-             return unidades[numero]
-        elif numero == 10:
-            return dezenas[numero]
+            return unidades[numero]
+        elif numero < 20:
+            return dezenas[numero % 10]
 
 class ContaLetrasTest(unittest.TestCase):
     def test_int_1_para_palavra(self):      
@@ -60,6 +61,9 @@ class ContaLetrasTest(unittest.TestCase):
         
     def test_int_10_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(10), 'dez')
+    
+    def test_int_11_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(11), 'onze')
 
 if __name__ == '__main__':
     unittest.main()    
