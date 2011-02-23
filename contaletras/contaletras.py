@@ -8,7 +8,7 @@ import unittest
 
 class ContaLetras:
     def int_2_palavra(self, numero):
-        unidades = {
+        dicionario = {
             1: 'um',
             2: 'dois',
             3: 'tres',
@@ -18,9 +18,6 @@ class ContaLetras:
             7: 'sete',
             8: 'oito',
             9: 'nove',        
-        }
-        
-        dezenas = {
             10: 'dez',
             11: 'onze',
             12: 'doze', 
@@ -31,13 +28,11 @@ class ContaLetras:
             17: 'dezessete',  
             18: 'dezoito',
             19: 'dezenove',              
-            
+            20: 'vinte',
         }
-        
-        if numero < 10:
-            return unidades[numero]
-        elif numero < 20:
-            return dezenas[numero]
+   
+        return dicionario[numero]
+
 
 class ContaLetrasTest(unittest.TestCase):
     def test_int_1_para_palavra(self):      
@@ -79,6 +74,8 @@ class ContaLetrasTest(unittest.TestCase):
     def test_int_19_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(19), 'dezenove')
 
+    def test_int_20_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(20), 'vinte')
 
 if __name__ == '__main__':
     unittest.main()    
