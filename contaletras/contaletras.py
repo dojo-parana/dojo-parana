@@ -29,6 +29,10 @@ class ContaLetras:
             18: 'dezoito',
             19: 'dezenove',              
             20: 'vinte',
+            30: 'trinta',
+            40: 'quarenta',
+            50: 'cinquenta',
+           
         }
    
         return dicionario[numero]
@@ -76,6 +80,9 @@ class ContaLetrasTest(unittest.TestCase):
 
     def test_int_20_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(20), 'vinte')
+
+    def test_int_50_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(50), 'cinquenta')
 
 if __name__ == '__main__':
     unittest.main()    
