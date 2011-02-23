@@ -36,7 +36,16 @@ class ContaLetras:
             70: 'setenta',
             80: 'oitenta',
             90: 'noventa',
-            100:'cem',
+            100: 'cem',
+            200: 'duzentos',
+            300: 'trezentos',
+            400: 'quatrocentos',
+            500: 'quinhentos',
+            600: 'seiscentos',
+            700: 'setecentos',
+            800: 'oitocentos',
+            900: 'novecentos',
+            1000: 'mil',
            
         }
    
@@ -94,6 +103,13 @@ class ContaLetrasTest(unittest.TestCase):
 
     def test_int_100_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(100), 'cem')
+        
+    def test_int_500_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(500), 'quinhentos')
+        
+    def test_int_1000_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(1000), 'mil')
+        
 
 if __name__ == '__main__':
     unittest.main()    
