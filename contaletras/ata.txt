@@ -1,0 +1,9 @@
+Nomes: Ramiro, Raphael, Thiago, Tatiane, Arthur, Paulo, Jefferson, Juliano, Fabricio
+Allan
+
+Linguagens: Python, Ruby, Java, Lua
+Problemas: Poker, Cheque, Conta Letras
+Linguagem eleita: Python
+Problema eleito: Contar Letras
+
+
