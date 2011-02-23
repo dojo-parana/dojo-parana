@@ -9,11 +9,17 @@ import unittest
 
 class ContaLetras:
     def int_2_palavra(self, numero):
-        return 'um'
+        if numero == 1:
+            return 'um'
+        elif numero == 2:
+            return 'dois'
 
 class ContaLetrasTest(unittest.TestCase):
-    def test_int_2_palavra(self):
+    def test_int_1_para_palavra(self):      
         self.assertEqual(ContaLetras().int_2_palavra(1), 'um')
-
+    
+    def test_int_2_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(2),'dois') 
+        
 if __name__ == '__main__':
     unittest.main()    
