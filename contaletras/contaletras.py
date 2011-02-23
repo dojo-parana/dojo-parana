@@ -60,6 +60,9 @@ class ContaLetras:
         else:
             resto = numero % 10
             return dicionario[numero-resto] + ' e ' + self.int_2_palavra(resto)
+            
+    def conta_palavras(self, numero):
+        return len(self.int_2_palavra(numero))
 
 
 class ContaLetrasTest(unittest.TestCase):
@@ -128,6 +131,9 @@ class ContaLetrasTest(unittest.TestCase):
         
     def test_int_135_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(135), 'cento e trinta e cinco')        
+        
+    def test_conta_palavras(self):
+        self.assertEqual(ContaLetras().conta_palavras(1), 2)        
 
 if __name__ == '__main__':
     unittest.main()    
