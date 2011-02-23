@@ -9,13 +9,11 @@ import unittest
 
 class ContaLetras:
     def int_2_palavra(self, numero):
-#        if numero == 1:
-#            return 'um'
-#        elif numero == 2:
-#            return 'dois'
 
         dicionario = {
-            1:'um', 2:'dois'
+            1: 'um',
+            2: 'dois',
+            3: 'tres',
         }
         
         return dicionario[numero]
@@ -27,7 +25,8 @@ class ContaLetrasTest(unittest.TestCase):
     def test_int_2_para_palavra(self):
         self.assertEqual(ContaLetras().int_2_palavra(2), 'dois')
         
-#    def test_int_3_para_palavra(self):
+    def test_int_3_para_palavra(self):
+        self.assertEqual(ContaLetras().int_2_palavra(3), 'tres')
         
      
         
