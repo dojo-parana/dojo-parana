@@ -22,13 +22,14 @@ class Caixa:
                 retorno.append(nota)
                 valor -= nota
         
-        if valor != 0:
+        if valor:
             raise NotaInvalidaError()
             
         return retorno
     
     def contar_notas(self, valor):
         return len(self.sacar_notas(valor))
+
 
 class CaixaTest(unittest.TestCase):
     def test_init(self):
@@ -71,9 +72,7 @@ class CaixaTest(unittest.TestCase):
         self.assertNotEqual(Caixa().contar_notas(60), 3)
     
     def test_sacar57(self):
-        self.assertEqual(Caixa().sacar_notas(57), [50,5,2])
-        
-    
+        self.assertEqual(Caixa().sacar_notas(57), [50, 5, 2])    
     
     
 if __name__ == '__main__':
