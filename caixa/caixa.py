@@ -61,8 +61,15 @@ class CaixaTest(unittest.TestCase):
     def test_sacar_55(self):
         self.assertRaises(NotaInvalidaError, Caixa().sacar_notas, 55)
     
-    def test_contar_notas(self):
+    def test_contar_notas_100(self):
         self.assertEqual(Caixa().contar_notas(100), 1)
+    
+    def test_contar_notas_55(self):
+        self.assertRaises(NotaInvalidaError,Caixa().contar_notas, 55)
+        
+    def test_contar_notas_60(self):
+        self.assertNotEqual(Caixa().contar_notas(60), 3)
+    
     
 if __name__ == '__main__':
     unittest.main()
