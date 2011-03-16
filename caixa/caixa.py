@@ -6,34 +6,26 @@
 
 import unittest2 as unittest
 
+
+class NotaInvalidaError(Exception):
+    pass
+
+
 class Caixa:
     def __init__(self):
-        pass
+        self.notas = [ 100, 50, 20, 10 ]
     
     def sacar_notas(self, valor):
-        notas = []
+        retorno = []
+        for nota in self.notas:
+            for x in xrange(valor/nota):
+                retorno.append(nota)
+                valor -= nota
         
-        if valor >= 100:
-            for x in xrange(valor/100):
-                notas.append(100)
-                valor -= 100
-                    
-        if valor >= 50:
-            for x in xrange(valor/50):
-                notas.append(50)        
-                valor -= 50
-                
-        if valor >= 20:
-            for x in xrange(valor/20):
-                notas.append(20)
-                valor -=20    
-        if valor >= 10:
-            for x in xrange(valor/10):
-                notas.append(10)
-                valor -= 10
-
+        if valor != 0:
+            raise NotaInvalidaError()
             
-        return notas
+        return retorno
     
 class CaixaTest(unittest.TestCase):
     def test_init(self):
@@ -62,6 +54,9 @@ class CaixaTest(unittest.TestCase):
 
     def test_sacar_60(self):
         self.assertEqual(Caixa().sacar_notas(60), [50, 10])
-
+        
+    def test_sacar_55(self):
+        self.assertRaises(NotaInvalidaError, Caixa().sacar_notas, 55)
+    
 if __name__ == '__main__':
     unittest.main()
