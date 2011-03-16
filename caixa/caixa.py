@@ -10,6 +10,9 @@ class Caixa:
     def __init__(self):
         pass
     def sacar_notas(self, valor):
+        if valor < 100:
+            return [50]
+
         notas = []
         for x in xrange(valor/100):
             notas.append(100)
@@ -27,6 +30,9 @@ class CaixaTest(unittest.TestCase):
         
     def test_nota300(self):
         self.assertEqual(Caixa().sacar_notas(300), [100, 100, 100])
+        
+    def test_nota50(self):
+        self.assertEqual(Caixa().sacar_notas(50), [50])
 
 
 if __name__ == '__main__':
