@@ -27,6 +27,9 @@ class Caixa:
             
         return retorno
     
+    def contar_notas(self, valor):
+        return len(self.sacar_notas(valor))
+
 class CaixaTest(unittest.TestCase):
     def test_init(self):
         self.assertNotEqual(Caixa(), None)
@@ -57,6 +60,9 @@ class CaixaTest(unittest.TestCase):
         
     def test_sacar_55(self):
         self.assertRaises(NotaInvalidaError, Caixa().sacar_notas, 55)
+    
+    def test_contar_notas(self):
+        self.assertEqual(Caixa().contar_notas(100), 1)
     
 if __name__ == '__main__':
     unittest.main()
