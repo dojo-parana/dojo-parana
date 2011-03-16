@@ -13,19 +13,26 @@ class Caixa:
     def sacar_notas(self, valor):
         notas = []
         
-        if valor < 20:
-            for x in xrange(valor/10):
-                notas.append(10)
-        if valor < 50:
+        if valor >= 100:
+            for x in xrange(valor/100):
+                notas.append(100)
+                valor -= 100
+                    
+        if valor >= 50:
+            for x in xrange(valor/50):
+                notas.append(50)        
+                valor -= 50
+                
+        if valor >= 20:
             for x in xrange(valor/20):
                 notas.append(20)
-        
-        if valor < 100:
-            for x in xrange(valor/50):
-                notas.append(50)
+                valor -=20    
+        if valor >= 10:
+            for x in xrange(valor/10):
+                notas.append(10)
+                valor -= 10
 
-        for x in xrange(valor/100):
-            notas.append(100)
+            
         return notas
     
 class CaixaTest(unittest.TestCase):
@@ -52,6 +59,9 @@ class CaixaTest(unittest.TestCase):
 
     def test_sacar_10(self):
         self.assertEqual(Caixa().sacar_notas(10), [10])
+
+    def test_sacar_60(self):
+        self.assertEqual(Caixa().sacar_notas(60), [50, 10])
 
 if __name__ == '__main__':
     unittest.main()
