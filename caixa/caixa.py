@@ -13,7 +13,7 @@ class NotaInvalidaError(Exception):
 
 class Caixa:
     def __init__(self):
-        self.notas = [ 100, 50, 20, 10 ]
+        self.notas = [ 100, 50, 20, 10, 5, 2 ]
     
     def sacar_notas(self, valor):
         retorno = []
@@ -59,16 +59,21 @@ class CaixaTest(unittest.TestCase):
         self.assertEqual(Caixa().sacar_notas(60), [50, 10])
         
     def test_sacar_55(self):
-        self.assertRaises(NotaInvalidaError, Caixa().sacar_notas, 55)
+        self.assertEqual(Caixa().sacar_notas(55), [50, 5])
     
     def test_contar_notas_100(self):
         self.assertEqual(Caixa().contar_notas(100), 1)
     
     def test_contar_notas_55(self):
-        self.assertRaises(NotaInvalidaError,Caixa().contar_notas, 55)
+        self.assertEqual(Caixa().contar_notas(55), 2)
         
     def test_contar_notas_60(self):
         self.assertNotEqual(Caixa().contar_notas(60), 3)
+    
+    def test_sacar57(self):
+        self.assertEqual(Caixa().sacar_notas(57), [50,5,2])
+        
+    
     
     
 if __name__ == '__main__':
