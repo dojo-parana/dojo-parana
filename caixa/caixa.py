@@ -24,6 +24,10 @@ class CaixaTest(unittest.TestCase):
     
     def test_nota200(self):
         self.assertEqual(Caixa().sacar_notas(200), [100, 100])
+        
+    def test_nota300(self):
+        self.assertEqual(Caixa().sacar_notas(300), [100, 100, 100])
+
 
 if __name__ == '__main__':
     unittest.main()
