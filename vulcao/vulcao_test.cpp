@@ -12,7 +12,8 @@
 #include "vulcao.cpp"
 
 TEST (vulcaoTest, Init) {
-    EXPECT_EQ (1, vulcao_init (1));
+    vulcao_init (8, 8, 5, 4, 0, 0);
+    EXPECT_EQ ('*', mapa[0][0]);
 }
 
 int main(int argc, char **argv) {
