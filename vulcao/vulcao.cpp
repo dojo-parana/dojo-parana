@@ -9,6 +9,7 @@ using namespace std;
 #include <math.h>
 
 char mapa[8][8];
+int dia = 0;
 
 void vulcao_init(int l, int c, int x1, int y1, int x0, int y0){
   for (int x = 0; x < l; x++){
@@ -22,5 +23,11 @@ void vulcao_init(int l, int c, int x1, int y1, int x0, int y0){
 	 } 
     }
   }
+}
+
+void vulcao_fumaca()
+{
+    vulcao_init (8, 8, 5, 4, 0, 0);
+    dia++;    
 }
 
