@@ -9,7 +9,7 @@ class Dojo
   end
   
   def create
-    if self.language == :ruby || self.language == :python
+    if self.language == :ruby || self.language == :python || self.language == :cpp
       # Create the Directory
       begin
         FileUtils.mkdir(self.directory)
@@ -43,6 +43,8 @@ class Dojo
       return ".rb"
     when :python
       return ".py"
+    when :cpp
+      return ".cpp"
     else
       raise "Invalid Language"
     end
