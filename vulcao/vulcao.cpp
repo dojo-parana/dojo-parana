@@ -37,5 +37,10 @@ void vulcao_fumaca()
 	mapa[1][0] = '*';    
 	mapa[1][1] = '*';    
 	mapa[2][0] = '*';
+	mapa[0][3] ='*';
+	mapa[3][0] ='*';
+
+
+
 }
 
