@@ -28,6 +28,9 @@ void vulcao_init(int l, int c, int x1, int y1, int x0, int y0){
 void vulcao_fumaca()
 {
     vulcao_init (8, 8, 5, 4, 0, 0);
-    dia++;    
+    dia++;
+    
+    mapa[0][1] = '*';
+    mapa[1][0] = '*';    
 }
 

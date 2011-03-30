@@ -19,9 +19,9 @@ TEST (vulcaoTest, Init) {
 TEST (vulcaoTest, Fumaca) {
     vulcao_fumaca();
     EXPECT_EQ (1, dia);
-    //EXPECT_EQ ('*', mapa[0][0]);
-    //EXPECT_EQ ('*', mapa[0][1]);
-    //EXPECT_EQ ('*', mapa[1][0]);
+    EXPECT_EQ ('*', mapa[0][0]);
+    EXPECT_EQ ('*', mapa[0][1]);
+    EXPECT_EQ ('*', mapa[1][0]);
 }
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
