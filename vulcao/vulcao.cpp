@@ -12,6 +12,9 @@ char mapa[8][8];
 int dia = 0;
 
 void vulcao_init(int l, int c, int x1, int y1, int x0, int y0){
+
+  dia = 0;
+
   for (int x = 0; x < l; x++){
     for (int y = 0; y < c; y++){
          if (x == x0 && y == y0){
@@ -27,10 +30,12 @@ void vulcao_init(int l, int c, int x1, int y1, int x0, int y0){
 
 void vulcao_fumaca()
 {
-    vulcao_init (8, 8, 5, 4, 0, 0);
-    dia++;
-    
-    mapa[0][1] = '*';
-    mapa[1][0] = '*';    
+	dia++;
+	mapa[0][1] = '*';
+	mapa[0][2] = '*';
+	mapa[0][1] = '*';
+	mapa[1][0] = '*';    
+	mapa[1][1] = '*';    
+	mapa[2][0] = '*';
 }
 
