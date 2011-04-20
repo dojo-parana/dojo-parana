@@ -19,6 +19,11 @@ public class JogoDaVida {
 		return matriz[x][y];
 	}
 
+	public void evoluiDia() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 }

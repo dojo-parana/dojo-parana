@@ -30,6 +30,15 @@ public class TestJogoDaVida extends TestCase {
 			for(int j=0;j<COLUNAS;j++)
 				assertFalse(jogo.getXY(i, j));
 	}
+	
+	public void testMatrizMortaEvolui(){
+		jogo.evoluiDia();
+		
+		for(int i=0;i<LINHAS;i++)
+			for(int j=0;j<COLUNAS;j++)
+				assertFalse(jogo.getXY(i, j));
+		
+	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
