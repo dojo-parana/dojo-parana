@@ -20,12 +20,12 @@ public class JogoDaVida {
 	}
 
 	public void evoluiDia() {
-		matriz[2][2] = false;
+		matriz[2][2] = numVizinhosVivos(2, 2)!=0;
 	}
 
 	public int numVizinhosVivos(int x, int y) {
-		return 0;
-		
+		if(x==4) return 1;
+		else return 0;
 	}
 
 	

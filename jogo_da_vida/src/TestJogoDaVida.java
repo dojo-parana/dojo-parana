@@ -52,6 +52,11 @@ public class TestJogoDaVida extends TestCase {
 		assertEquals(jogo.numVizinhosVivos(3,3),0);
 	}
 
+	public void testCelulaNaoEstaIsolada() {
+		jogo.setXY(3, 4, true);
+		assertEquals(jogo.numVizinhosVivos(4,4),1);
+	}
+
 	protected void tearDown() throws Exception {
 		super.tearDown();
 	}
