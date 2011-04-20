@@ -23,6 +23,11 @@ public class JogoDaVida {
 		matriz[2][2] = false;
 	}
 
+	public int numVizinhosVivos(int x, int y) {
+		return 0;
+		
+	}
+
 	
 	
 }

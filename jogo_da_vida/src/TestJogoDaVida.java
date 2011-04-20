@@ -47,6 +47,10 @@ public class TestJogoDaVida extends TestCase {
 			for(int j=0;j<COLUNAS;j++)
 				assertFalse(jogo.getXY(i, j));
 	}
+	
+	public void testCelulaEstaIsolada() {
+		assertEquals(jogo.numVizinhosVivos(3,3),0);
+	}
 
 	protected void tearDown() throws Exception {
 		super.tearDown();
