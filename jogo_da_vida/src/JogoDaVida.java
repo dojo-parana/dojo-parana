@@ -20,8 +20,7 @@ public class JogoDaVida {
 	}
 
 	public void evoluiDia() {
-		// TODO Auto-generated method stub
-		
+		matriz[2][2] = false;
 	}
 
 	
