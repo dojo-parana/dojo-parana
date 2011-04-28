@@ -1,8 +1,10 @@
 require "test/unit"
 require "aval_exp_math"
 
-class aval_exp_mathTest < Test::Unit::TestCase
+class AvalExpMathTest < Test::Unit::TestCase
   def test_create_aval_exp_math
-    assert_not_nil(aval_exp_math.new)
+    aval=AvalExpMath.new
+    assert_equal(aval.sum, 2)
+    
   end
 end

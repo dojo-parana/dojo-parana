@@ -1,4 +1,8 @@
-class aval_exp_math
+class AvalExpMath
   def initialize
+  end
+
+  def sum
+    2
   end
 end
