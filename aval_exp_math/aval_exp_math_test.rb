@@ -24,4 +24,9 @@ class AvalExpMathTest < Test::Unit::TestCase
     assert_equal(aval.solve_exp, "*")      
   end
 
+  def test_multi
+    aval = AvalExpMath.new("5 * 2")
+    assert_equal(aval.solve_exp, 10)      
+  end
+
 end
