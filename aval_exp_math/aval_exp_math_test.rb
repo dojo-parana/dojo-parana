@@ -13,4 +13,15 @@ class AvalExpMathTest < Test::Unit::TestCase
     aval = AvalExpMath.new("5 - 2")
     assert_equal(aval.solve_exp, 3)  
   end
+
+  def test_first_char
+    aval = AvalExpMath.new("5")
+    assert_equal(aval.solve_exp, "5")      
+  end
+
+  def test_operador
+    aval = AvalExpMath.new("5 *")
+    assert_equal(aval.solve_exp, "*")      
+  end
+
 end
