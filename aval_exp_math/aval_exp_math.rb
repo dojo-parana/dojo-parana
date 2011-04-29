@@ -1,8 +1,9 @@
 class AvalExpMath
-  def initialize
+  def initialize(expression)
+		@expression = expression  
   end
 
   def sum
-    2
+    @expression
   end
 end
