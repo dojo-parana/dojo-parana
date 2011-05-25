@@ -19,10 +19,10 @@ class AvalExpMathTest < Test::Unit::TestCase
     assert_equal(aval.solve_exp, "5")      
   end
 
-  def test_operador
-    aval = AvalExpMath.new("5 *")
-    assert_equal(aval.solve_exp, "*")      
-  end
+#  def test_operador
+#    aval = AvalExpMath.new("5 *")
+#    assert_equal(aval.solve_exp, "*")      
+#  end
 
   def test_multi
     aval = AvalExpMath.new("5 * 2")
