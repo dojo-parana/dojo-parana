@@ -7,6 +7,10 @@ class mundo_pequenoTest(unittest.TestCase):
     self.m = mundo_pequeno()
     self.assertEqual(self.m.calcula_distancia((0,0),(3,4)), 5)
 
+  def test_distancia_negativa(self):
+    self.m = mundo_pequeno()
+    self.assertEqual(self.m.calcula_distancia((3,4),(0,0)), 5)
+
 if __name__ == '__main__':
     unittest.main()
     
