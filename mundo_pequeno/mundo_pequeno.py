@@ -11,3 +11,17 @@ class mundo_pequeno:
     c = ponto2[1] - ponto1[1]
     resultado = sqrt(b**2+c**2)	
     return resultado
+
+  def inicializa(self, entrada):
+    lista = entrada.splitlines()
+    lista = [x.split() for x in lista]
+    self.amigos = {}
+    for x in lista:
+        self.amigos[int(x[0])] = (int(x[1]),int(x[2]))
+    
+  def processa(self):
+    resultado = []
+    for chave, valor in self.amigos.iteritems():
+        resultado.append((self.calcula_distancia((0,0),valor),chave))
+    resultado.sort()      
+    self.distancias = resultado
