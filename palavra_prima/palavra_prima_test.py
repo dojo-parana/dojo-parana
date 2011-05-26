@@ -11,6 +11,11 @@ class palavra_primaTest(unittest.TestCase):
     def test_codigo_duasletras(self):
         self.assertEqual(palavra_prima("bb").codigo(), 4)
 	
+    def test_codigo_duasletras(self):
+        self.assertEqual(palavra_prima("Ab").codigo(), 29)
+
+    def test_aisprima(self):
+        self.assertEqual(palavra_prima("a").isprima(), False)
 
 if __name__ == '__main__':
     unittest.main()
