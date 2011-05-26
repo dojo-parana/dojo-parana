@@ -1,5 +1,6 @@
+import math
+
 class palavra_prima(str):
-	
     def codigo(self):
         soma = 0
         for caract in self:
@@ -10,6 +11,10 @@ class palavra_prima(str):
         return soma  
 
     def isprima(self):
-        return self.codigo()==2
+        codigo = self.codigo()
+        for i in range(2,math.sqrt(codigo)+1):
+            if (codigo % i)==0:
+                return False   
+        return codigo != 1
      
   
