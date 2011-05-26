@@ -17,6 +17,9 @@ class palavra_primaTest(unittest.TestCase):
     def test_aisprima(self):
         self.assertEqual(palavra_prima("a").isprima(), False)
 
+    def test_bisprima(self):
+        self.assertEqual(palavra_prima("b").isprima(), True)
+
 if __name__ == '__main__':
     unittest.main()
     
