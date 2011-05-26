@@ -8,6 +8,9 @@ class palavra_primaTest(unittest.TestCase):
     def test_codigo_maiusculo(self):
         self.assertEqual(palavra_prima("A").codigo(), 27)
 	
+    def test_codigo_duasletras(self):
+        self.assertEqual(palavra_prima("bb").codigo(), 4)
+	
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,9 +1,11 @@
 class palavra_prima(str):
 	
     def codigo(self):
-        if self.isupper():
-            return ord(self)-38
-        else:
-            return ord(self)-96    
-    
+        soma = 0
+        for caract in self:
+            if self.isupper():
+                soma += ord(caract)-38           
+            else:
+                soma += ord(caract)-96
+        return soma       
   
