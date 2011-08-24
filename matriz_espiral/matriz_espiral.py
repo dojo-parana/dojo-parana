@@ -15,8 +15,10 @@ class matriz_espiral:
             self.matriz.append([])
             for j in range(colunas):
                 self.matriz[i].append(0)
-
+                 
         self.matriz[0][0] = 1
+        if linhas>1:
+            self.matriz[0][1] = 2
 
 class matriz_espiralTest(unittest.TestCase):
     def test_init(self):
@@ -43,7 +45,10 @@ class matriz_espiralTest(unittest.TestCase):
         matriz = matriz_espiral(1,1)
         self.assertEquals(1,matriz.matriz[0][0])
 
-    
+    def test_segundo_elemento(self):
+        matriz = matriz_espiral(2,2)
+        self.assertEquals(2,matriz.matriz[0][1])
+
 
         
 if __name__ == '__main__':
