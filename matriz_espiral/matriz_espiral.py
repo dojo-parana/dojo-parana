@@ -10,14 +10,11 @@ class matriz_espiral:
     def __init__(self, colunas, linhas):
         self.colunas=colunas
         self.linhas=linhas
-        self.matriz = [
-            [0,0,0],
-            [0,0,0],
-            [0,0,0],
-            [0,0,0]
-        ]
-
-    
+        self.matriz = []
+        for i in range(linhas):
+            self.matriz.append([])
+            for j in range(colunas):
+                self.matriz[i].append(0)
 
 class matriz_espiralTest(unittest.TestCase):
     def test_init(self):
@@ -35,6 +32,10 @@ class matriz_espiralTest(unittest.TestCase):
         self.assertEquals(3, len(matriz.matriz[1]))
         self.assertEquals(3, len(matriz.matriz[2]))
         self.assertEquals(3, len(matriz.matriz[3]))
+        
+    def test_cria_matriz_2x2(self):
+        matriz = matriz_espiral(2,2)
+        self.assertEquals(2, len(matriz.matriz))
 
         
 if __name__ == '__main__':
