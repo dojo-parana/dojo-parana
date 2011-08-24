@@ -16,6 +16,8 @@ class matriz_espiral:
             for j in range(colunas):
                 self.matriz[i].append(0)
 
+        self.matriz[0][0] = 1
+
 class matriz_espiralTest(unittest.TestCase):
     def test_init(self):
         self.assertNotEqual(matriz_espiral(3,4), None)
@@ -36,6 +38,12 @@ class matriz_espiralTest(unittest.TestCase):
     def test_cria_matriz_2x2(self):
         matriz = matriz_espiral(2,2)
         self.assertEquals(2, len(matriz.matriz))
+
+    def test_primeiro_elemento(self):
+        matriz = matriz_espiral(1,1)
+        self.assertEquals(1,matriz.matriz[0][0])
+
+    
 
         
 if __name__ == '__main__':
