@@ -14,7 +14,7 @@ class matriz_espiral:
         for i in range(linhas):
             self.matriz.append([])
             for j in range(colunas):
-                self.matriz[i].append(0)
+                self.matriz[i].append(j+1)
                  
         self.matriz[0][0] = 1
         if linhas>1:
