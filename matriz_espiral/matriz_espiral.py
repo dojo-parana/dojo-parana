@@ -12,9 +12,9 @@ class matriz_espiral:
         self.linhas=linhas
         self.matriz = [
             [0,0,0],
-            0,
-            0,
-            0
+            [0,0,0],
+            [0,0,0],
+            [0,0,0]
         ]
 
     
@@ -32,6 +32,9 @@ class matriz_espiralTest(unittest.TestCase):
         matriz = matriz_espiral(3,4)
         self.assertEquals(4, len(matriz.matriz))
         self.assertEquals(3, len(matriz.matriz[0]))
+        self.assertEquals(3, len(matriz.matriz[1]))
+        self.assertEquals(3, len(matriz.matriz[2]))
+        self.assertEquals(3, len(matriz.matriz[3]))
 
         
 if __name__ == '__main__':
