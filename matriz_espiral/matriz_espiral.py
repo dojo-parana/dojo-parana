@@ -53,6 +53,9 @@ class matriz_espiralTest(unittest.TestCase):
         matriz = matriz_espiral(2,2)
         self.assertEquals(3,matriz.matriz[1][1])
     
+    def test_ultimo_elemento_4x3(self):
+        matriz = matriz_espiral(4,3)
+        self.assertEquals(6,matriz.matriz[2][3])
         
 if __name__ == '__main__':
     unittest.main()
