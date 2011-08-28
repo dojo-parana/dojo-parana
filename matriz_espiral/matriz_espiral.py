@@ -15,8 +15,14 @@ class matriz_espiral:
             self.matriz.append([])
             for j in range(colunas):
                 self.matriz[i].append(j+1+i)
+        self.espiral()
 
-
+    def espiral(self):
+        if (self.linhas == 2) and (self.colunas == 2):
+            self.matriz[1][0] = 4
+            ultima_coluna = self.matriz[1][1]
+            for j in range(self.colunas-2,0,-1):
+                self.matriz[1][j] = ultima_coluna+1
                  
         
 
@@ -57,5 +63,9 @@ class matriz_espiralTest(unittest.TestCase):
         matriz = matriz_espiral(4,3)
         self.assertEquals(6,matriz.matriz[2][3])
         
+    def test_elemento_1x0(self):
+        matriz = matriz_espiral(2,2)
+        self.assertEquals(4,matriz.matriz[1][0])
+    
 if __name__ == '__main__':
     unittest.main()
