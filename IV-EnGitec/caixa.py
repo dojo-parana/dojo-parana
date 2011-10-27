@@ -9,12 +9,14 @@ import unittest2 as unittest
 
 class Caixa:
     def __init__(self):
-        pass
+        self.notas_padrao = [10,20,50,100]
 
     def sacar(self,valor):
-        if valor % 10 != 0:
-            return False
-        return {valor:1}
+        if valor in self.notas_padrao:
+			return {valor:1}
+        else:
+		    return False
+		
  
 class CaixaTest(unittest.TestCase):
     
