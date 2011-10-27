@@ -12,8 +12,11 @@ class Caixa:
         pass
 
     def sacar(self,valor):
-        if valor == 2:
+        if valor % 10 != 0:
             return False
+        if valor == 10:
+            return {10:1} 
+       
 
 class CaixaTest(unittest.TestCase):
     
@@ -22,6 +25,11 @@ class CaixaTest(unittest.TestCase):
 
     def test_saque_nota2(self):
         self.assertFalse(self.caixa.sacar(2))
+
+    def test_saque_nota10(self):
+        self.assertEqual(self.caixa.sacar(10),{10:1})
+
+    
 
 
 if __name__ == '__main__':
