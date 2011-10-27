@@ -11,8 +11,18 @@ class Caixa:
     def __init__(self):
         pass
 
+    def sacar(self,valor):
+        if valor == 2:
+            return False
+
 class CaixaTest(unittest.TestCase):
-    pass
+    
+    def setUp(self):
+        self.caixa = Caixa()
+
+    def test_saque_nota2(self):
+        self.assertFalse(self.caixa.sacar(2))
+
 
 if __name__ == '__main__':
     unittest.main()
