@@ -18,6 +18,8 @@ class Caixa:
             return {10:1}       
         if valor == 20:
             return {20:1}
+        if valor == 50:
+            return {50:1}
  
 class CaixaTest(unittest.TestCase):
     
@@ -32,6 +34,9 @@ class CaixaTest(unittest.TestCase):
 
     def test_saque_nota20(self):
         self.assertEqual(self.caixa.sacar(20),{20:1})
+
+    def test_saque_nota50(self):
+        self.assertEqual(self.caixa.sacar(50),{50:1})
 
 
 
