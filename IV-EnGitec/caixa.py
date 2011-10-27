@@ -14,14 +14,7 @@ class Caixa:
     def sacar(self,valor):
         if valor % 10 != 0:
             return False
-        if valor == 10:
-            return {10:1}       
-        if valor == 20:
-            return {20:1}
-        if valor == 50:
-            return {50:1}
-        if valor == 100:
-            return {100:1}
+        return {valor:1}
  
 class CaixaTest(unittest.TestCase):
     
