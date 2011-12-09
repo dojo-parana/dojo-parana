@@ -10,11 +10,11 @@ class Estatistica
     attr_accessor :vetor
 
     def initialize
-      @vetor = nil
+      @vetor = []
     end
 
     def add_vetor(elemento)
-        @vetor = [elemento]
+        @vetor.push(elemento)
     end
 end
 
@@ -24,7 +24,7 @@ class Testestatistica < Test::Unit::TestCase
     end
     def test_vetor_deve_iniciar_vazia
         estatistica = Estatistica.new
-        assert_nil(estatistica.vetor)
+        assert(estatistica.vetor.empty?)
     end
     def test_vetor1_dever_retornar1
         estatistica = Estatistica.new
