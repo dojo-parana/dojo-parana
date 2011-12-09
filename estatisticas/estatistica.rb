@@ -97,7 +97,16 @@ class Testestatistica < Test::Unit::TestCase
         estatistica = Estatistica.new
         estatistica.add_vetor([6,9,15,-2,92,11])
         assert_equal(estatistica.menor,-2)
-
+    end    
+    def test_final_maior
+        estatistica = Estatistica.new
+        estatistica.add_vetor([6,9,15,-2,92,11])
+        assert_equal(estatistica.maior,92)
+    end    
+    def test_final_media
+        estatistica = Estatistica.new
+        estatistica.add_vetor([6,9,15,-2,92,11])
+        assert_equal(estatistica.media,(131.0).fdiv(6))
     end    
         
 end
