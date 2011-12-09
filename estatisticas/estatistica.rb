@@ -30,6 +30,16 @@ class Estatistica
         end 
         return min
     end
+    def maior
+        max = @vetor[0]
+        @vetor.each do |i| 
+            if i > max 
+                max = i
+            end
+        end 
+        return max
+    end
+
 end
 
 class Testestatistica < Test::Unit::TestCase
@@ -60,6 +70,11 @@ class Testestatistica < Test::Unit::TestCase
         estatistica = Estatistica.new
         estatistica.add_vetor([2,1,3])
         assert_equal(estatistica.menor, 1)
+    end    
+    def test_maior_de_3_elementos
+        estatistica = Estatistica.new
+        estatistica.add_vetor([2,1,3])
+        assert_equal(estatistica.maior, 3)
     end    
         
 end
