@@ -93,6 +93,12 @@ class Testestatistica < Test::Unit::TestCase
         estatistica.add_vetor([2,1,3,9])
         assert_equal(estatistica.media, 3.75)
     end    
+    def test_final_min
+        estatistica = Estatistica.new
+        estatistica.add_vetor([6,9,15,-2,92,11])
+        assert_equal(estatistica.menor,-2)
+
+    end    
         
 end
 
