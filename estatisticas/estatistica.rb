@@ -13,7 +13,12 @@ class Estatistica
       @vetor = []
     end
 
-    def add_vetor(elemento)
+    def add_vetor(elementos)
+        elementos.each do |i| @vetor.push(i)
+        end 
+    end
+
+    def add_elemento(elemento)
         @vetor.push(elemento)
     end
 end
@@ -28,9 +33,21 @@ class Testestatistica < Test::Unit::TestCase
     end
     def test_vetor1_dever_retornar1
         estatistica = Estatistica.new
-        estatistica.add_vetor(1)
+        estatistica.add_elemento(1)
         assert_equal(estatistica.vetor.length,1)    
     end
+    def test_vetor2_deve_retornar2
+        estatistica = Estatistica.new
+        estatistica.add_elemento(1)
+        estatistica.add_elemento(1)
+        assert_equal(estatistica.vetor.length,2)
+    end
+    def test_inicializar_com_vetor
+        estatistica = Estatistica.new
+        estatistica.add_vetor([1,2,3])
+        assert_equal(estatistica.vetor.length, 3)
+    end
+    
         
 end
 
