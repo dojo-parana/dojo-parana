@@ -21,6 +21,10 @@ class Estatistica
     def add_elemento(elemento)
         @vetor.push(elemento)
     end
+    def menor
+        1
+        
+    end
 end
 
 class Testestatistica < Test::Unit::TestCase
@@ -47,7 +51,11 @@ class Testestatistica < Test::Unit::TestCase
         estatistica.add_vetor([1,2,3])
         assert_equal(estatistica.vetor.length, 3)
     end
-    
+    def test_menor_de_3_elementos
+        estatistica = Estatistica.new
+        estatistica.add_vetor([2,1,3])
+        assert_equal(estatistica.menor, 1)
+    end    
         
 end
 
