@@ -39,6 +39,13 @@ class Estatistica
         end 
         return max
     end
+    def media
+        med = 0.0
+        @vetor.each do |i| 
+            med = med + i 
+        end 
+        return med.fdiv(@vetor.length)
+    end
 
 end
 
@@ -75,6 +82,16 @@ class Testestatistica < Test::Unit::TestCase
         estatistica = Estatistica.new
         estatistica.add_vetor([2,1,3])
         assert_equal(estatistica.maior, 3)
+    end    
+    def test_media
+        estatistica = Estatistica.new
+        estatistica.add_vetor([2,1,3])
+        assert_equal(estatistica.media, 2)
+    end    
+    def test_media_decimal
+        estatistica = Estatistica.new
+        estatistica.add_vetor([2,1,3,9])
+        assert_equal(estatistica.media, 3.75)
     end    
         
 end
