@@ -22,8 +22,13 @@ class Estatistica
         @vetor.push(elemento)
     end
     def menor
-        1
-        
+        min = @vetor[0]
+        @vetor.each do |i| 
+            if i < min 
+                min = i
+            end
+        end 
+        return min
     end
 end
 
