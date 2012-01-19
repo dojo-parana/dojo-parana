@@ -11,18 +11,19 @@ class Dependencia:
         pass
     
     def resolve(self, lista):
-        return ["B","C"]
+        return lista[1]
 
 class DependenciaTest(unittest.TestCase):
     
     def test_init(self):
         self.assertNotEqual(Dependencia(), None)
     
-    def test_expressao(self):
-                 
+    def test_ABC(self):
         lista = ["A", ["B", "C"]]
         depend = Dependencia()
         self.assertEqual(depend.resolve(lista), ["B","C"])
+
+    
         
 
 if __name__ == '__main__':
