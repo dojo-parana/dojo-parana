@@ -7,11 +7,20 @@
 import unittest2 as unittest
 
 class Dependencia:
-    def __init__(self):
-        pass
-    
+        
     def resolve(self, lista):
-        return lista[1]
+        dependencias = {}
+
+        for elemento in lista:
+            dependencias[elemento[0]] = set(elemento[1])
+                
+        for chave, valor in dependencias.items():
+            for subchave in valor:
+                subvalor = dependencias.get(subchave)
+                if subvalor:
+                    dependencias[chave] = dependencias[chave].union(subvalor)
+                
+        return dependencias
 
 class DependenciaTest(unittest.TestCase):
     
@@ -19,9 +28,22 @@ class DependenciaTest(unittest.TestCase):
         self.assertNotEqual(Dependencia(), None)
     
     def test_ABC(self):
-        lista = ["A", ["B", "C"]]
+        entrada = [["A", ["B", "C"]]]
+        retorno = {"A": set(["B","C"])}
         depend = Dependencia()
-        self.assertEqual(depend.resolve(lista), ["B","C"])
+        self.assertEqual(depend.resolve(entrada), retorno)
+
+    def test_BCE(self):
+        entrada = [["B", ["C", "E"]]]
+        retorno = {"B": set(["C","E"])}
+        depend = Dependencia()
+        self.assertEqual(depend.resolve(entrada), retorno)
+
+    def test_ABCBCE(self):
+        entrada = [["A", ["B", "C"]],["B", ["C", "E"]]]
+        retorno = {"A": set(["B","C","E"]), "B": set(["C","E"])}
+        depend = Dependencia()
+        self.assertEqual(depend.resolve(entrada), retorno)
 
     
         
