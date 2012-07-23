@@ -9,63 +9,128 @@ import unittest2 as unittest
 class EJogadaInvalida(Exception):
     pass
 
-class jokenpo:
+class Papel():
     def __init__(self):
-        pass
-        
-    def jogada(self, j1, j2):
-        if j1 not in ("Tesoura", "Papel", "Pedra"):
-            raise EJogadaInvalida
-        
-        if j1 == j2:
-            return 'Empate'
+        self.nome = 'Papel'
+
+    def __lt__(self, obj):
+        if obj.nome == 'Tesoura':
+            return True
         else:
-            if (((j1 == 'Tesoura' ) and (j2 == 'Papel' )) or 
-               ((j1 == 'Papel' ) and (j2 == 'Tesoura' ))):
-                return 'Tesoura'
+            return False
+
+    def __eq__(self, obj):
+        if obj.nome == self.nome:
+            return True
+        else:
+            return False
+
+class Pedra():
+    def __init__(self):
+        self.nome = 'Pedra'
+
+    def __lt__(self, obj):
+        if obj.nome == 'Papel':
+            return True
+        else:
+            return False
+
+    def __eq__(self, obj):
+        if obj.nome == self.nome:
+            return True
+        else:
+            return False
+
+class Tesoura():
+    def __init__(self):
+        self.nome = 'Tesoura'
+
+    def __lt__(self, obj):
+        if obj.nome == 'Pedra':
+            return True
+        else:
+            return False
+
+    def __eq__(self, obj):
+        if obj.nome == self.nome:
+            return True
+        else:
+            return False
+
+class jokenpo:       
+    def jogada(self, j1, j2):
+        parametros = [j1, j2]
+        parametros.sort()
+        
+        for par in parametros:
+            if isinstance(par, Papel) or \
+               isinstance(par, Pedra) or \
+               isinstance(par, Tesoura): 
+                if par.nome not in ("Tesoura", "Papel", "Pedra"):
+                    raise EJogadaInvalida
             else:
-                if (((j1 == 'Pedra' ) and (j2 == 'Tesoura' )) or 
-                   ((j1 == 'Tesoura' ) and (j2 == 'Pedra' ))):
-                    return 'Pedra'
-                else:
-                    if (((j1 == 'Papel' ) and (j2 == 'Pedra' )) or 
-                       ((j1 == 'Pedra' ) and (j2 == 'Papel' ))):
-                        return 'Papel'
+                raise EJogadaInvalida
+
+
+        if parametros[0] == parametros[1]:
+            return 'Empate'
+        elif parametros[0] < parametros[1]:
+            return parametros[1].nome
+        else:
+            return parametros[0].nome
             
 
 class jokenpoTest(unittest.TestCase):   
     def setUp(self):
-        self.j=jokenpo()
-
-    def test_init(self):
-        self.assertNotEqual(self.j, None)
+        self.j = jokenpo()
+        self.papel = Papel()
+        self.pedra = Pedra()
+        self.tesou = Tesoura()
 
     def test_empate_papel_papel(self):
-        self.assertEqual(self.j.jogada('Papel','Papel'), 'Empate')
+        j1 = self.papel
+        j2 = self.papel
+        self.assertEqual(self.j.jogada(j1,j2), 'Empate')
 
     def test_empate_pedra_pedra(self):
-        self.assertEqual(self.j.jogada('Pedra','Pedra'), 'Empate')
+        j1 = self.pedra
+        j2 = self.pedra
+        self.assertEqual(self.j.jogada(j1,j2), 'Empate')
 
     def test_empate_tesoura_tesoura(self):
-        self.assertEqual(self.j.jogada('Tesoura','Tesoura'), 'Empate')
+        j1 = self.tesou
+        j2 = self.tesou
+        self.assertEqual(self.j.jogada(j1,j2), 'Empate')
 
     def test_tesoura_vence_papel(self):
-        self.assertEqual(self.j.jogada('Tesoura','Papel'), 'Tesoura')
+        j1 = self.tesou
+        j2 = self.papel
+        self.assertEqual(self.j.jogada(j1,j2), 'Tesoura')
 
     def test_papel_perde_tesoura(self):
-        self.assertEqual(self.j.jogada('Papel','Tesoura'), 'Tesoura')
+        j1 = self.papel
+        j2 = self.tesou
+        self.assertEqual(self.j.jogada(j1,j2), 'Tesoura')
     
     def test_pedra_vence_tesoura(self):
-        self.assertEqual(self.j.jogada('Pedra','Tesoura'), 'Pedra')
+        j1 = self.pedra
+        j2 = self.tesou
+        self.assertEqual(self.j.jogada(j1,j2), 'Pedra')
 
     def test_tesoura_perde_pedra(self):
-        self.assertEqual(self.j.jogada('Tesoura','Pedra'), 'Pedra')
+        j1 = self.tesou
+        j2 = self.pedra
+        self.assertEqual(self.j.jogada(j1,j2), 'Pedra')
     
     def test_papel_vence_pedra(self):
-        self.assertEqual(self.j.jogada('Papel','Pedra'), 'Papel')
+        j1 = self.papel
+        j2 = self.pedra
+        self.assertEqual(self.j.jogada(j1,j2), 'Papel')
 
     def test_pedra_perde_papel(self):
-        self.assertEqual(self.j.jogada('Pedra','Papel'), 'Papel')
+        j1 = self.pedra
+        j2 = self.papel
+        self.assertEqual(self.j.jogada(j1,j2), 'Papel')
 
     def test_jogada_invalida(self):
         self.assertRaises(EJogadaInvalida, self.j.jogada,'Fogo','Agua')
