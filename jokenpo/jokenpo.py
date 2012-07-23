@@ -11,7 +11,8 @@ class jokenpo:
         pass
 
     def jogada(self, j1, j2):
-        return 'Empate'
+        if j1 == j2:
+            return 'Empate'
 
 class jokenpoTest(unittest.TestCase):
     def test_init(self):
