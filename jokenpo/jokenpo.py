@@ -17,6 +17,10 @@ class jokenpo:
             if (((j1 == 'Tesoura' ) and (j2 == 'Papel' )) or 
                ((j1 == 'Papel' ) and (j2 == 'Tesoura' ))):
                 return 'Tesoura'
+            else:
+                if (((j1 == 'Pedra' ) and (j2 == 'Tesoura' )) or 
+                   ((j1 == 'Tesoura' ) and (j2 == 'Pedra' ))):
+                    return 'Pedra'
             
 
 class jokenpoTest(unittest.TestCase):
@@ -37,6 +41,9 @@ class jokenpoTest(unittest.TestCase):
 
     def test_papel_perde_tesoura(self):
         self.assertEqual(jokenpo().jogada('Papel','Tesoura'), 'Tesoura')
+    
+    def test_pedra_vence_tesoura(self):
+        self.assertEqual(jokenpo().jogada('Pedra','Tesoura'), 'Pedra')
 
 
 if __name__ == '__main__':
