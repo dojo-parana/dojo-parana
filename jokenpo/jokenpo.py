@@ -13,6 +13,9 @@ class jokenpo:
     def jogada(self, j1, j2):
         if j1 == j2:
             return 'Empate'
+        else:
+            if (j1 == 'Tesoura' ) and (j2 == 'Papel' ):
+                return 'Tesoura' 
 
 class jokenpoTest(unittest.TestCase):
     def test_init(self):
@@ -26,6 +29,9 @@ class jokenpoTest(unittest.TestCase):
 
     def test_empate_tesoura_tesoura(self):
         self.assertEqual(jokenpo().jogada('Tesoura','Tesoura'), 'Empate')
+
+    def test_tesoura_vence_papel(self):
+        self.assertEqual(jokenpo().jogada('Tesoura','Papel'), 'Tesoura')
 
 
 
