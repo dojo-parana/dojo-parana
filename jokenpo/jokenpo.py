@@ -54,6 +54,8 @@ class jokenpoTest(unittest.TestCase):
     def test_papel_vence_pedra(self):
         self.assertEqual(jokenpo().jogada('Papel','Pedra'), 'Papel')
 
+    def test_pedra_perde_papel(self):
+        self.assertEqual(jokenpo().jogada('Pedra','Papel'), 'Papel')
 
 if __name__ == '__main__':
     unittest.main()
