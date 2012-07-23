@@ -24,6 +24,9 @@ class jokenpoTest(unittest.TestCase):
     def test_empate_pedra_pedra(self):
         self.assertEqual(jokenpo().jogada('Pedra','Pedra'), 'Empate')
 
+    def test_empate_tesoura_tesoura(self):
+        self.assertEqual(jokenpo().jogada('Tesoura','Tesoura'), 'Empate')
+
 
 
 if __name__ == '__main__':
