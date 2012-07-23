@@ -10,9 +10,16 @@ class jokenpo:
     def __init__(self):
         pass
 
+    def jogada(self, j1, j2):
+        return 'Empate'
+
 class jokenpoTest(unittest.TestCase):
     def test_init(self):
         self.assertNotEqual(jokenpo(), None)
+
+    def test_empate_papel_papel(self):
+        self.assertEqual(jokenpo().jogada('Papel','Papel'), 'Empate')
+
 
 if __name__ == '__main__':
     unittest.main()
