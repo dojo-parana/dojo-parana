@@ -44,6 +44,9 @@ class jokenpoTest(unittest.TestCase):
     
     def test_pedra_vence_tesoura(self):
         self.assertEqual(jokenpo().jogada('Pedra','Tesoura'), 'Pedra')
+    def test_tesoura_perde_pedra(self):
+        self.assertEqual(jokenpo().jogada('Tesoura','Pedra'), 'Pedra')
+    
 
 
 if __name__ == '__main__':
