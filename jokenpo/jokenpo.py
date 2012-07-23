@@ -27,35 +27,39 @@ class jokenpo:
                         return 'Papel'
             
 
-class jokenpoTest(unittest.TestCase):
+class jokenpoTest(unittest.TestCase):   
+    def setUp(self):
+        self.j=jokenpo()
+
     def test_init(self):
-        self.assertNotEqual(jokenpo(), None)
+        self.assertNotEqual(self.j, None)
 
     def test_empate_papel_papel(self):
-        self.assertEqual(jokenpo().jogada('Papel','Papel'), 'Empate')
+        self.assertEqual(self.j.jogada('Papel','Papel'), 'Empate')
 
     def test_empate_pedra_pedra(self):
-        self.assertEqual(jokenpo().jogada('Pedra','Pedra'), 'Empate')
+        self.assertEqual(self.j.jogada('Pedra','Pedra'), 'Empate')
 
     def test_empate_tesoura_tesoura(self):
-        self.assertEqual(jokenpo().jogada('Tesoura','Tesoura'), 'Empate')
+        self.assertEqual(self.j.jogada('Tesoura','Tesoura'), 'Empate')
 
     def test_tesoura_vence_papel(self):
-        self.assertEqual(jokenpo().jogada('Tesoura','Papel'), 'Tesoura')
+        self.assertEqual(self.j.jogada('Tesoura','Papel'), 'Tesoura')
 
     def test_papel_perde_tesoura(self):
-        self.assertEqual(jokenpo().jogada('Papel','Tesoura'), 'Tesoura')
+        self.assertEqual(self.j.jogada('Papel','Tesoura'), 'Tesoura')
     
     def test_pedra_vence_tesoura(self):
-        self.assertEqual(jokenpo().jogada('Pedra','Tesoura'), 'Pedra')
+        self.assertEqual(self.j.jogada('Pedra','Tesoura'), 'Pedra')
+
     def test_tesoura_perde_pedra(self):
-        self.assertEqual(jokenpo().jogada('Tesoura','Pedra'), 'Pedra')
+        self.assertEqual(self.j.jogada('Tesoura','Pedra'), 'Pedra')
     
     def test_papel_vence_pedra(self):
-        self.assertEqual(jokenpo().jogada('Papel','Pedra'), 'Papel')
+        self.assertEqual(self.j.jogada('Papel','Pedra'), 'Papel')
 
     def test_pedra_perde_papel(self):
-        self.assertEqual(jokenpo().jogada('Pedra','Papel'), 'Papel')
+        self.assertEqual(self.j.jogada('Pedra','Papel'), 'Papel')
 
 if __name__ == '__main__':
     unittest.main()
