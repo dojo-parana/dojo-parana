@@ -6,11 +6,17 @@
 
 import unittest2 as unittest
 
+class EJogadaInvalida(Exception):
+    pass
+
 class jokenpo:
     def __init__(self):
         pass
-
+        
     def jogada(self, j1, j2):
+        if j1 not in ("Tesoura", "Papel", "Pedra"):
+            raise EJogadaInvalida
+        
         if j1 == j2:
             return 'Empate'
         else:
@@ -60,6 +66,9 @@ class jokenpoTest(unittest.TestCase):
 
     def test_pedra_perde_papel(self):
         self.assertEqual(self.j.jogada('Pedra','Papel'), 'Papel')
+
+    def test_jogada_invalida(self):
+        self.assertRaises(EJogadaInvalida, self.j.jogada,'Fogo','Agua')
 
 if __name__ == '__main__':
     unittest.main()
