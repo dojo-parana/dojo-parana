@@ -16,6 +16,10 @@ def calcula(lista):
             total += PrecoLivro
         elif qtde == 2:
             total += PrecoLivro * 2 * 0.95
+        elif qtde == 3:
+            total += PrecoLivro * 3 * 0.9
+
+
     return total
 
 class hpTest(unittest.TestCase):
@@ -36,6 +40,10 @@ class hpTest(unittest.TestCase):
 
     def test_um_dois_um(self):
         self.assertEqual(PrecoLivro + 79.8 + PrecoLivro, calcula([1,2,1]))
+    
+    def test_tres(self):
+        self.assertEqual(113.4, calcula([3]))
+
     
 			
 if __name__ == '__main__':
