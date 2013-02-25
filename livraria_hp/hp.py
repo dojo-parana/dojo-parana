@@ -27,22 +27,22 @@ def calcula(lista):
 
 class calculoDescontoProgressivoTest(unittest.TestCase):
     def test_uma_copia(self):
-        self.assertEqual(PrecoLivro, calcula([1]))
+        self.assertEqual(42, calcula([1]))
 
     def test_duas_copias(self):
-        self.assertEqual((PrecoLivro*2)*0.95, calcula([2]))
+        self.assertEqual(79.8, calcula([2]))
 
     def test_duas_copias_distintas(self):
-        self.assertEqual((PrecoLivro*2), calcula([1,1]))
+        self.assertEqual(84, calcula([1,1]))
 
     def test_duas_copias_mais_uma_distinta(self):
-        self.assertEqual(42 + 79.8, calcula([2,1]))
+        self.assertEqual(121.8, calcula([2,1]))
 
     def test_duas_copias_mais_duas(self):
-        self.assertEqual(79.8+ 79.8, calcula([2,2]))
+        self.assertEqual(159.6, calcula([2,2]))
 
     def test_uma_copia_mais_duas_mais_uma(self):
-        self.assertEqual(PrecoLivro + 79.8 + PrecoLivro, calcula([1,2,1]))
+        self.assertEqual(163.8, calcula([1,2,1]))
     
     def test_tres_copias(self):
         self.assertEqual(113.4, calcula([3]))
