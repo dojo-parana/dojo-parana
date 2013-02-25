@@ -48,7 +48,9 @@ class calculoDescontoProgressivoTest(unittest.TestCase):
 
     def test_cinco_copias(self):
         self.assertEqual(168, calcula([5]))
-
+    
+    def test_seis_copias(self):
+        self.assertEqual(6 * 42, calcula([6]))
 		
 if __name__ == '__main__':
     unittest.main()	
