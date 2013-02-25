@@ -9,7 +9,7 @@ import unittest2 as unittest
 
 def calcula(lista):
     if lista[0][0] == 2:
-        return 79.2
+        return 79.8
     return 42
 
 class hpTest(unittest.TestCase):
