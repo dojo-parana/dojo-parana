@@ -9,14 +9,18 @@ import unittest2 as unittest
 PrecoLivro = 42
 
 def calcula(lista):
-    
-    if len(lista) == 2:
-        return 121.8
+    total = 0
 
-    if lista[0][0] == 2:
-        return 79.8
+    for qtde,volume in lista:
+        if qtde == 1:
+            total += PrecoLivro
+        elif qtde == 2:
+            total += PrecoLivro * 2 * 0.95
+        
+
+
     
-    return PrecoLivro
+    return total
 
 class hpTest(unittest.TestCase):
     def test_uma_copia_livro_um(self):
@@ -24,6 +28,9 @@ class hpTest(unittest.TestCase):
 
     def test_duas_copias_livro_um(self):
         self.assertEqual((PrecoLivro*2)*0.95, calcula([(2,1)]))
+
+    def test_uma_copias_livro_um_uma_copia_livro_dois(self):
+        self.assertEqual((PrecoLivro*2), calcula([(1,1),(1,2)]))
 
     def test_duas_copias_livro_um_uma_copia_livro_dois(self):
         self.assertEqual(42 + 79.8, calcula([(2,1),(1,2)]))
