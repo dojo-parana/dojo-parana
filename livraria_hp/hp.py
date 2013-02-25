@@ -7,22 +7,18 @@
 import unittest2 as unittest
 
 PrecoLivro = 42
+QuantidadeMaximaDesconto = 6
 
 def calcula(lista):
     total = 0
+    progressao = 0.05
 
     for qtde in lista:
-        if qtde == 1:
-            total += PrecoLivro
-        elif qtde == 2:
-            total += PrecoLivro * 2 * 0.95
-        elif qtde == 3:
-            total += PrecoLivro * 3 * 0.9
-        elif qtde == 4:
-            total += PrecoLivro * 4 * 0.85
-        elif qtde == 5:
-            total += PrecoLivro * 5 * 0.80
-
+        if qtde < QuantidadeMaximaDesconto:
+            desconto = progressao * (qtde - 1)
+        else:
+            desconto = 0.0
+        total += qtde * PrecoLivro * (1 - desconto)
     return total
 
 class calculoDescontoProgressivoTest(unittest.TestCase):
