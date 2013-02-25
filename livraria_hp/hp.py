@@ -51,7 +51,7 @@ class calculoDescontoProgressivoTest(unittest.TestCase):
         self.assertAlmostEqual(142.8, calcula([4]))
 
     def test_cinco_copias(self):
-        self.assertEqual(PrecoLivro*5*0.8, calcula([5]))
+        self.assertEqual(168, calcula([5]))
 
 		
 if __name__ == '__main__':
