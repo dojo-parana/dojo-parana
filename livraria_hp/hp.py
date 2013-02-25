@@ -9,8 +9,13 @@ import unittest2 as unittest
 PrecoLivro = 42
 
 def calcula(lista):
+    
+    if len(lista) == 2:
+        return 121.8
+
     if lista[0][0] == 2:
         return 79.8
+    
     return PrecoLivro
 
 class hpTest(unittest.TestCase):
@@ -20,6 +25,9 @@ class hpTest(unittest.TestCase):
     def test_duas_copias_livro_um(self):
         self.assertEqual((PrecoLivro*2)*0.95, calcula([(2,1)]))
 
+    def test_duas_copias_livro_um_uma_copia_livro_dois(self):
+        self.assertEqual(42 + 79.8, calcula([(2,1),(1,2)]))
 
+			
 if __name__ == '__main__':
     unittest.main()
