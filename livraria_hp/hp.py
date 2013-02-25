@@ -20,6 +20,8 @@ def calcula(lista):
             total += PrecoLivro * 3 * 0.9
         elif qtde == 4:
             total += PrecoLivro * 4 * 0.85
+        elif qtde == 5:
+            total += PrecoLivro * 5 * 0.80
 
     return total
 
@@ -48,7 +50,8 @@ class calculoDescontoProgressivoTest(unittest.TestCase):
     def test_quatro_copias(self):
         self.assertAlmostEqual(142.8, calcula([4]))
 
-
+    def test_cinco_copias(self):
+        self.assertEqual(PrecoLivro*5*0.8, calcula([5]))
 
 		
 if __name__ == '__main__':
