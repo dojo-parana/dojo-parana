@@ -19,21 +19,24 @@ def calcula(lista):
     return total
 
 class hpTest(unittest.TestCase):
-    def test_uma_copia_livro_um(self):
+    def test_um(self):
         self.assertEqual(PrecoLivro, calcula([1]))
 
-    def test_duas_copias_livro_um(self):
+    def test_dois(self):
         self.assertEqual((PrecoLivro*2)*0.95, calcula([2]))
 
-    def test_uma_copia_livro_um_uma_copia_livro_dois(self):
+    def test_um_um(self):
         self.assertEqual((PrecoLivro*2), calcula([1,1]))
 
-    def test_duas_copias_livro_um_uma_copia_livro_dois(self):
+    def test_dois_um(self):
         self.assertEqual(42 + 79.8, calcula([2,1]))
 
-    def test_duas_copias_livro_duas_copias_livro_dois(self):
+    def test_dois_dois(self):
         self.assertEqual(79.8+ 79.8, calcula([2,2]))
 
+    def test_um_dois_um(self):
+        self.assertEqual(PrecoLivro + 79.8 + PrecoLivro, calcula([1,2,1]))
+    
 			
 if __name__ == '__main__':
     unittest.main()
