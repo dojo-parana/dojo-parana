@@ -9,19 +9,24 @@ import unittest2 as unittest
 PrecoLivro = 42
 QuantidadeMaximaDesconto = 6
 
+def preco(qtde):
+    progressao = 0.05
+    if qtde < QuantidadeMaximaDesconto:
+        desconto = progressao * (qtde - 1)
+    else:
+        desconto = 0.0
+    return qtde * PrecoLivro * (1 - desconto)
+
 def calcula(lista):
     total = 0
-    progressao = 0.05
+
 
     if len(lista) == 5:
         return 268.8
 
     for qtde in lista:
-        if qtde < QuantidadeMaximaDesconto:
-            desconto = progressao * (qtde - 1)
-        else:
-            desconto = 0.0
-        total += qtde * PrecoLivro * (1 - desconto)
+        total+= preco(qtde)
+
     return total
 
 class calculoDescontoProgressivoTest(unittest.TestCase):
@@ -51,9 +56,6 @@ class calculoDescontoProgressivoTest(unittest.TestCase):
 
     def test_cinco_copias(self):
         self.assertEqual(168, calcula([5]))
-    
-    def test_seis_copias(self):
-        self.assertEqual(6 * 42, calcula([6]))
 
     def test_dois_dois_dois_um_um(self):
         self.assertEqual(268.8, calcula([2, 2, 2, 1, 1]))
