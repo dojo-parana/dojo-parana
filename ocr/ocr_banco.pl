@@ -29,5 +29,6 @@ sub parse{
 
 ok(parse($um) == 1, "um");
 ok(parse($dois) == 2, "dois");
+ok(parse($dois) == 3, "tres");
 
 done_testing();
