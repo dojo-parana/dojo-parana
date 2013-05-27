@@ -33,6 +33,9 @@ class Miojo
             return [ampulheta1,ampulheta2].max
         end
 
+        while tempo_preparo > 0 do
+
+        
         10
     end
 end
@@ -94,6 +97,12 @@ class TestMiojo < Test::Unit::TestCase
         miojo = Miojo.new
         tempo = miojo.preparo(2, 5, 3)
         assert_equal(5, tempo)
+    end
+
+    def test_
+        miojo = Miojo.new
+        tempo = miojo.preparo(2, 3, 7)
+        assert_equal(9, tempo)
     end
 
 end
