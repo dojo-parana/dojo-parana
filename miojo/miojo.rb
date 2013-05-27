@@ -29,7 +29,9 @@ class Miojo
             return cozimento
         end
         
-        
+        if cozimento == (ampulheta1 - ampulheta2).abs
+            return [ampulheta1,ampulheta2].max
+        end
 
         10
     end
@@ -74,12 +76,19 @@ class TestMiojo < Test::Unit::TestCase
        miojo = Miojo.new
        tempo = miojo.preparo(14, 3, 7)
        assert_equal(14, tempo)
-    end
+    end				
 
     def test_cozimento_de_3_com_amplulhetas_impares
         miojo = Miojo.new
         tempo = miojo.preparo(3, 2, 2)
         assert_equal(-1, tempo)
+    end
+
+    def test_cozimento_e_diferencia_entre_ampulhetas
+        miojo = Miojo.new
+        tempo = miojo.preparo(2, 3, 5)
+        assert_equal(5, tempo)
+
     end
 
 
