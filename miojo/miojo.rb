@@ -33,11 +33,14 @@ class Miojo
             return [ampulheta1,ampulheta2].max
         end
 
-        tempo_preparo = ampulheta1
-        resto = (ampulheta1 - ampulheta2).abs
+        ampmin = [ampulheta1, ampulheta2].min
+        ampmax = [ampulheta1, ampulheta2].max
+
+        tempo_preparo = ampmin
+        resto = (ampmin - ampmax).abs
         while resto > 0 do
-            tempo_preparo += ampulheta1
-            resto = (resto - ampulheta1)
+            tempo_preparo += ampmin
+            resto = (resto - ampmin)
         end
         return tempo_preparo        
         #10
