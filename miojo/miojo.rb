@@ -5,13 +5,13 @@
 
 require "test/unit"
 
-class miojo
+class Miojo
     def initialize
     end
 end
 
-class Testmiojo < Test::Unit::TestCase
+class TestMiojo < Test::Unit::TestCase
     def test_initialize
-        assert_not_nil(miojo.new)
+        assert_not_nil(Miojo.new)
     end
 end
