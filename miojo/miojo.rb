@@ -12,7 +12,8 @@ class Miojo
     def preparo(cozimento, ampulheta1, ampulheta2)
         if cozimento == ampulheta1
             return ampulheta1
-        else
+        end
+        if cozimento == ampulheta2
             return ampulheta2
         end
         10
@@ -34,6 +35,12 @@ class TestMiojo < Test::Unit::TestCase
        miojo = Miojo.new
        tempo = miojo.preparo(3, 3, 5)
        assert_equal(3, tempo)
+    end
+
+    def test_caso_naotrivial
+       miojo = Miojo.new
+       tempo = miojo.preparo(5, 3, 5)
+       assert_equal(5, tempo)
     end
 
 end
