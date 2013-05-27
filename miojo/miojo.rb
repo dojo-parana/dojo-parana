@@ -88,8 +88,12 @@ class TestMiojo < Test::Unit::TestCase
         miojo = Miojo.new
         tempo = miojo.preparo(2, 3, 5)
         assert_equal(5, tempo)
-
     end
 
+    def test_cozimento_e_diferencia_entre_ampulhetas_invertido
+        miojo = Miojo.new
+        tempo = miojo.preparo(2, 5, 3)
+        assert_equal(5, tempo)
+    end
 
 end
