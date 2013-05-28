@@ -27,23 +27,17 @@ class Miojo
             return [ampulheta1,ampulheta2].max
         end
 
-        ampmin = [ampulheta1, ampulheta2].min
-        ampmax = [ampulheta1, ampulheta2].max
-
-        tempo_preparo = ampmin
-        resto = (ampmin - ampmax).abs
-
-        while resto >= 0 do
-            tempo_preparo += ampmin
-            resto = (resto - ampmin)
-        end
-
         n1 = ampulheta1
         n2 = ampulheta2
-        while (n1 - n2).abs == cozimento
-            
-            
+        while ((n1 - n2).abs != cozimento)
+            if n1 < n2
+                n1 += ampulheta1
+            else
+                n2 += ampulheta2
+            end            
         end
+
+        tempo_preparo = [n1,n2].max
 
         return tempo_preparo        
     end
@@ -130,6 +124,12 @@ class TestMiojo < Test::Unit::TestCase
         miojo = Miojo.new
         tempo = miojo.preparo(1, 3, 5)
         assert_equal(6, tempo)
+    end
+
+    def test_cozimento_5_7_8
+        miojo = Miojo.new
+        tempo = miojo.preparo(5, 7, 8)
+        assert_equal(21, tempo)
     end
 
 end
