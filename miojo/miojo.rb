@@ -58,6 +58,12 @@ class TestMiojo < Test::Unit::TestCase
         assert_equal(10, tempo)
     end
 
+    def test_default_invertido
+        miojo = Miojo.new
+        tempo = miojo.preparo(3, 7, 5)
+        assert_equal(10, tempo)
+    end
+
     def test_caso_trivial
        miojo = Miojo.new
        tempo = miojo.preparo(3, 3, 5)
@@ -123,4 +129,5 @@ class TestMiojo < Test::Unit::TestCase
         tempo = miojo.preparo(1, 3, 5)
         assert_equal(6, tempo)
     end
+
 end
