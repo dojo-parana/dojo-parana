@@ -10,12 +10,6 @@ class Miojo
     end
 
     def preparo(cozimento, ampulheta1, ampulheta2)
-        #if cozimento == ampulheta1
-        #    return ampulheta1
-        #end
-        #if cozimento == ampulheta2
-        #    return ampulheta2
-        #end
 
         if cozimento % 2 == 1 && ampulheta1 % 2 == 0 && ampulheta2 % 2 == 0
             return -1
@@ -43,7 +37,6 @@ class Miojo
             resto = (resto - ampmin)
         end
         return tempo_preparo        
-        #10
     end
 end
 
