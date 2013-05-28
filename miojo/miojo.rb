@@ -38,6 +38,13 @@ class Miojo
             resto = (resto - ampmin)
         end
 
+        n1 = ampulheta1
+        n2 = ampulheta2
+        while (n1 - n2).abs == cozimento
+            
+            
+        end
+
         return tempo_preparo        
     end
 end
