@@ -32,10 +32,12 @@ class Miojo
 
         tempo_preparo = ampmin
         resto = (ampmin - ampmax).abs
-        while resto > 0 do
+
+        while resto >= 0 do
             tempo_preparo += ampmin
             resto = (resto - ampmin)
         end
+
         return tempo_preparo        
     end
 end
