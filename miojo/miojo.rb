@@ -118,4 +118,9 @@ class TestMiojo < Test::Unit::TestCase
         assert_equal(9, tempo)
     end
 
+    def test_cozimento_1_3_5
+        miojo = Miojo.new
+        tempo = miojo.preparo(1, 3, 5)
+        assert_equal(6, tempo)
+    end
 end
