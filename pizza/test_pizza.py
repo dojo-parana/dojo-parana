@@ -23,7 +23,7 @@ class PizzaTest(unittest.TestCase):
 
     def testa_distancia_calculada_invertida(self): 
         sabores={"Marguerita":2, "Napolitana":1,} 
-        self.assertEqual(pizza.distancia(sabores, sabores),0)     
+        self.assertEqual(pizza.distancia(sabores, sabores), 0)
 
 if __name__ == '__main__':
     unittest.main()

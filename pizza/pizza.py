@@ -54,16 +54,21 @@ equipe = {
     }
 
 def compatibilidade(nome):
-    if nome == 'Luca':
-        return 'Renato'
-    else:
-        return 'Renata'
+    dists = [] 
+    for nome2 in equipe.keys():
+        
+        if nome2 == nome:
+            continue
+        dists.append((nome2, distancia(equipe[nome], equipe[nome2])))
+    encontrado = sorted(dists, key=lambda x: x[1])[0]
+    nome = encontrado[0]
+    return nome
 
 def distancia(membro1, membro2):
-    acumulador = 0    
-    for chave,valor in membro1.iteritems():
-        acumulador += (valor -membro2[chave]) * (valor - membro2[chave])
-    return acumulador
-           
+    acc = 0
+    for sabor in membro1.keys():
+        dist = membro2[sabor] - membro1[sabor]
+        acc += dist**2
+    return acc
 
 
