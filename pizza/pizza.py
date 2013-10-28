@@ -60,5 +60,8 @@ def compatibilidade(nome):
         return 'Renata'
 
 def distancia(membro1, membro2):
-    return 0
+    for chave,valor in membro1.iteritems():
+        return membro2[chave] - valor
+           
+
 

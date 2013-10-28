@@ -12,8 +12,11 @@ class PizzaTest(unittest.TestCase):
     def test_lenon_deve_ser_renata(self):
         self.assertEqual(pizza.compatibilidade('Lenon'), 'Renata')
 
-    def testa_distancia(self):
-        self.assertEqual(pizza.distancia({"Marguerita":5}, {"Marguerita":5}),0)      
+    def testa_distancia_simples(self):
+        self.assertEqual(pizza.distancia({"Marguerita":5}, {"Marguerita":5}),0)   
+
+    def testa_distancia_calculada(self):
+        self.assertEqual(pizza.distancia({"Marguerita":1}, {"Marguerita":2}),1)      
 
 if __name__ == '__main__':
     unittest.main()
