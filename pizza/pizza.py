@@ -56,11 +56,12 @@ equipe = {
 def compatibilidade(nome):
     dists = [] 
     for nome2 in equipe.keys():
-        
         if nome2 == nome:
             continue
-        dists.append((nome2, distancia(equipe[nome], equipe[nome2])))
-    encontrado = sorted(dists, key=lambda x: x[1])[0]
+        dist = distancia(equipe[nome], equipe[nome2])
+        dists.append((nome2, dist))
+    criterio = lambda x: x[1]
+    encontrado = sorted(dists, key=criterio)[0]
     nome = encontrado[0]
     return nome
 
