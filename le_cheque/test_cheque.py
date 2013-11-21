@@ -19,6 +19,8 @@ class TestCheque(unittest.TestCase):
         self.assertEqual(Conversor().bla('vinte'), '20')
     def test_doze(self):
         self.assertEqual(Conversor().bla('doze'), '12')    
+    def test_cem(self):
+        self.assertEqual(Conversor().bla('cem'), '100')
     
 
 if __name__ == '__main__':
