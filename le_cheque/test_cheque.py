@@ -23,6 +23,8 @@ class TestCheque(unittest.TestCase):
         self.assertEqual(Conversor().bla('cem'), '100')
     def test_mil(self):
         self.assertEqual(Conversor().bla('mil'), '1000')
+    def test_cento(self):
+        self.assertEqual(Conversor().bla('cento'), '100')
     
 
 if __name__ == '__main__':
