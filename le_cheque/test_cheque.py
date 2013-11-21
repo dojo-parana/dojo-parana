@@ -29,6 +29,8 @@ class TestCheque(unittest.TestCase):
         self.assertEqual(Conversor().bla('cento e quinze'), 115)
     def test_centoedez(self):
         self.assertEqual(Conversor().bla('cento e dez'), 110)
+    def test_virgula(self):
+        self.assertEqual(Conversor().bla('cento e dez e quinze centavos'), 110.15)
     
 
 if __name__ == '__main__':
