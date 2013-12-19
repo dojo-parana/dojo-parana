@@ -4,7 +4,7 @@
 
 import unittest
 import torre
-from torre import Pino, Disco
+from torre import Pino, Disco, Tabuleiro
 
 
 class pinoTeste(unittest.TestCase):
@@ -16,7 +16,8 @@ class pinoTeste(unittest.TestCase):
         disco = Disco()
         self.assertTrue(disco)
 
-
-
+    def test_tabuleiro_existe(self):
+        tabuleiro = Tabuleiro()
+        self.assertTrue(tabuleiro)
 if __name__ == '__main__':
     unittest.main()	

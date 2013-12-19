@@ -8,3 +8,6 @@ class Pino(object):
 
 class Disco(object):
     pass
+
+class Tabuleiro(object):
+    pass
