@@ -5,3 +5,6 @@
 class Pino(object):
     def __init__(self):
         pass
+
+class Disco(object):
+    pass
