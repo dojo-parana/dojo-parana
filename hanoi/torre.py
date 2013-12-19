@@ -15,4 +15,8 @@ class Disco(object):
         self.tamanho = tamanho
 
 class Tabuleiro(object):
-    pass
+    def __init__(self):
+        self.pinos = []
+
+    def adicionaPino(self, pino):
+        self.pinos.append(pino)
