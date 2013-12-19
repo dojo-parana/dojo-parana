@@ -9,6 +9,12 @@ from torre import Tabuleiro
 
 
 class pinoTeste(unittest.TestCase):
+    def setUp(self):
+        self.pino = Pino(1)
+        self.pino.adicionaDisco(Disco(3))
+        self.pino.adicionaDisco(Disco(2))
+        self.pino.adicionaDisco(Disco(1))
+
     def test_pino_existe(self):
         pino = Pino(1)
         self.assertEqual(1, pino.numero)
@@ -17,8 +23,13 @@ class pinoTeste(unittest.TestCase):
         disco = Disco(1)
         self.assertEqual(1, disco.tamanho)
 
+    def test_discos_no_pino(self):
+        self.assertEqual(3, len(self.pino.discos))
+
     def test_tabuleiro_existe(self):
         tabuleiro = Tabuleiro()
         self.assertTrue(tabuleiro)
+
+
 if __name__ == '__main__':
     unittest.main()	
