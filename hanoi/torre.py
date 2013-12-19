@@ -3,8 +3,8 @@
 #
 
 class Pino(object):
-    def __init__(self):
-        pass
+    def __init__(self, id):
+        self.id = id
 
 class Disco(object):
     pass

@@ -3,13 +3,15 @@
 #
 
 import unittest
-import torre
-from torre import Pino, Disco, Tabuleiro
+from torre import Pino
+from torre import Disco
+from torre import Tabuleiro
 
 
 class pinoTeste(unittest.TestCase):
     def test_pino_existe(self):
-        pino = Pino()
+        pino = Pino(1)
+        self.assertEqual(1, pino.id)
         self.assertTrue(pino)
 
     def test_disco_existe(self):
