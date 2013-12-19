@@ -3,11 +3,12 @@
 #
 
 class Pino(object):
-    def __init__(self, id):
-        self.id = id
+    def __init__(self, numero):
+        self.numero = numero
 
 class Disco(object):
-    pass
+    def __init__(self, tamanho):
+        self.tamanho = tamanho
 
 class Tabuleiro(object):
     pass

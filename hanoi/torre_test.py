@@ -11,12 +11,11 @@ from torre import Tabuleiro
 class pinoTeste(unittest.TestCase):
     def test_pino_existe(self):
         pino = Pino(1)
-        self.assertEqual(1, pino.id)
-        self.assertTrue(pino)
+        self.assertEqual(1, pino.numero)
 
     def test_disco_existe(self):
-        disco = Disco()
-        self.assertTrue(disco)
+        disco = Disco(1)
+        self.assertEqual(1, disco.tamanho)
 
     def test_tabuleiro_existe(self):
         tabuleiro = Tabuleiro()
