@@ -15,5 +15,9 @@ class TestConjuntoPa(unittest.TestCase):
     def test_conjunto_pa_razao_1_1_deve_ser_0(self):
         self.assertEqual(self.pa.razao(),0)
 
+    def test_conjunto_pa_razao_1_2_deve_ser_1(self):
+        self.pa.conjunto = (1,2,)
+        self.assertEqual(self.pa.razao(),1)
+
 if __name__ == '__main__':
     unittest.main()

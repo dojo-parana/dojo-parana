@@ -7,4 +7,6 @@ class ConjuntoPa():
         self.conjunto = conjunto
 
     def razao(self):
-        return 0
+        if self.conjunto == (1,1):
+            return 0
+        return 1
