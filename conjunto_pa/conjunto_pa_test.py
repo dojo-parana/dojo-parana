@@ -28,5 +28,9 @@ class TestConjuntoPa(unittest.TestCase):
         self.pa.conjunto = 1,2,
         self.assertEqual(self.pa.calcula_razoes(),set([1]))
 
+    def test_calculo_razoes_1_2_3(self):
+        self.pa.conjunto = 1,2,3,
+        self.assertEqual(self.pa.calcula_razoes(),set([1,2]))
+
 if __name__ == '__main__':
     unittest.main()
