@@ -12,5 +12,5 @@ class ConjuntoPa():
         return num2-num1
 
     def calcula_razoes(self):
-        return set([0])
+        return set([self.razao(*self.conjunto)])
 
