@@ -10,9 +10,7 @@ class ConjuntoPa():
     def __init__(self, conjunto):
         self.conjunto = conjunto
 
-    def razao(self):
+    def razao(self,num1,num2):
         if len(self.conjunto) == 1:
             raise PaError()
-        if self.conjunto == (1,1):
-            return 0
-        return 1
+        return num2-num1
