@@ -3,7 +3,6 @@
 
 import unittest
 from pa import ConjuntoPa
-from pa import PaError
 
 
 class TestConjuntoPa(unittest.TestCase):
@@ -19,13 +18,11 @@ class TestConjuntoPa(unittest.TestCase):
     def test_conjunto_pa_razao_1_2_deve_ser_1(self):
         self.assertEqual(self.pa.razao(1,2,),1)
 
-    def test_conjunto_deve_ter_mais_que_um_elemento(self):
-        self.pa.conjunto = (1,)
-        self.assertRaises(PaError, self.pa.razao,1,5)
-
     def test_conjunto_pa_razao_1_3_deve_ser_2(self):
         self.assertEqual(self.pa.razao(1,3,),2)
 
+    def test_calculo_razoes(self):
+        self.assertEqual(self.pa.calcula_razoes(),set([0]))
 
 if __name__ == '__main__':
     unittest.main()
