@@ -16,4 +16,4 @@ class Telefone:
         return entrada
 
     def converte_letra(self, letra):
-        return self.dicionario[letra]
+        return self.dicionario.get(letra,letra)
