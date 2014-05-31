@@ -62,6 +62,12 @@ class TestTelefone(unittest.TestCase):
             self.telefone.converte_letra("T")
         )
 
+    def test_converte_letra_wxyz_retorna9(self):
+        self.assertEqual(
+            '9',
+            self.telefone.converte_letra("W")
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

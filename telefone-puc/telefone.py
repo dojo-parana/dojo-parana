@@ -29,3 +29,6 @@ class Telefone:
 
         if ord(letra) >= 84 and ord(letra) < 87:
             return '8'
+
+        if ord(letra) >= 87 and ord(letra) < 91:
+            return '9'
