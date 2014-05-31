@@ -74,5 +74,10 @@ class TestTelefone(unittest.TestCase):
             self.telefone.converte_letra("0")
         )
 
+    def test_converte_tudo(self):
+        self.assertEqual(
+            '69-647372253-562',
+            self.telefone.decriptografar("MY-MISERABLE-JOB")
+        )
 if __name__ == '__main__':
     unittest.main()

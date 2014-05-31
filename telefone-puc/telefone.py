@@ -17,3 +17,11 @@ class Telefone:
 
     def converte_letra(self, letra):
         return self.dicionario.get(letra,letra)
+
+    def decriptografar(self, codigo):
+        codigo_retorno = ''
+        for letra in codigo:
+            codigo_retorno += self.converte_letra(
+                letra
+            )
+        return codigo_retorno
