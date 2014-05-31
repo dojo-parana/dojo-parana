@@ -7,3 +7,7 @@ class Telefone:
 
     def ler_entrada(self, entrada):
         return entrada
+
+    def converte_letra(self, letra):
+        return 2
+
