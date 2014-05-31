@@ -10,7 +10,7 @@ class Telefone:
 
     def converte_letra(self, letra):
         if letra == 'A':
-            return 2
+            return '2'
         else:
-            return 3
+            return '3'
 
