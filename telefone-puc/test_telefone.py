@@ -44,6 +44,23 @@ class TestTelefone(unittest.TestCase):
             self.telefone.converte_letra("J")
         )
 
+    def test_converte_letra_mno_retorna6(self):
+        self.assertEqual(
+            '6',
+            self.telefone.converte_letra("M")
+        )
+
+    def test_converte_letra_pqrs_retorna7(self):
+        self.assertEqual(
+            '7',
+            self.telefone.converte_letra("P")
+        )
+
+    def test_converte_letra_tuv_retorna8(self):
+        self.assertEqual(
+            '8',
+            self.telefone.converte_letra("T")
+        )
 
 
 if __name__ == '__main__':
