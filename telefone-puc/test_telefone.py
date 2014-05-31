@@ -20,12 +20,20 @@ class TestTelefone(unittest.TestCase):
             self.telefone.ler_entrada("ABC")
         )
 
-    def test_converte_letra(self):
+    def test_converte_letra_a_retorna_2(self):
         self.assertEqual(
             2,
             self.telefone.converte_letra("A")
 
         )
+
+    def test_converte_letra_d_retorna_3(self):
+        self.assertEqual(
+            3,
+            self.telefone.converte_letra("D")
+        )
+
+    
 
 
 if __name__ == '__main__':

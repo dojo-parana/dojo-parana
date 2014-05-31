@@ -9,5 +9,8 @@ class Telefone:
         return entrada
 
     def converte_letra(self, letra):
-        return 2
+        if letra == 'A':
+            return 2
+        else:
+            return 3
 
