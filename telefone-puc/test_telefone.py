@@ -20,19 +20,29 @@ class TestTelefone(unittest.TestCase):
             self.telefone.ler_entrada("ABC")
         )
 
-    def test_converte_letra_a_retorna_2(self):
+    def test_converte_letra_abc_retorna_2(self):
         self.assertEqual(
             '2',
             self.telefone.converte_letra("A")
-
         )
 
-    def test_converte_letra_d_retorna_3(self):
+    def test_converte_letra_def_retorna_3(self):
         self.assertEqual(
             '3',
             self.telefone.converte_letra("D")
         )
 
+    def test_converte_letra_ghi_retorna4(self):
+        self.assertEqual(
+            '4',
+            self.telefone.converte_letra("G")
+        )
+
+    def test_converte_letra_jkl_retorna5(self):
+        self.assertEqual(
+            '5',
+            self.telefone.converte_letra("J")
+        )
 
 
 

@@ -9,8 +9,14 @@ class Telefone:
         return entrada
 
     def converte_letra(self, letra):
-        if letra == 'A':
+        if ord(letra) >= 65 and ord(letra) < 68:
             return '2'
-        else:
+
+        if ord(letra) >= 68 and ord(letra) < 71:
             return '3'
 
+        if ord(letra) >= 71 and ord(letra) < 74:
+            return '4'
+
+        if ord(letra) >= 74 and ord(letra) < 77:
+            return '5'
