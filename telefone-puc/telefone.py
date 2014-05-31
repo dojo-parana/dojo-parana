@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding=utf-8 -*-
+class ConverteError(Exception):
+    pass
 
 class Telefone:
     def __init__(self):
@@ -19,9 +21,13 @@ class Telefone:
         return self.dicionario.get(letra,letra)
 
     def decriptografar(self, codigo):
-        codigo_retorno = ''
-        for letra in codigo:
-            codigo_retorno += self.converte_letra(
-                letra
-            )
-        return codigo_retorno
+
+        try:
+            codigo_retorno = [] #Cria uma lista vazia
+            for letra in codigo:
+                codigo_retorno.append(
+                    self.converte_letra(letra)
+                )
+            return ''.join(codigo_retorno) #Converte a lista em string
+        except:
+            raise ConverteError

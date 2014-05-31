@@ -3,6 +3,7 @@
 
 import unittest
 from telefone import Telefone
+from telefone import ConverteError
 
 class TestTelefone(unittest.TestCase):
     def setUp(self):
@@ -79,5 +80,13 @@ class TestTelefone(unittest.TestCase):
             '69-647372253-562',
             self.telefone.decriptografar("MY-MISERABLE-JOB")
         )
+
+    def test_converte_numero(self):
+        self.assertRaises(
+            ConverteError,
+            self.telefone.decriptografar,
+            0
+        )
+
 if __name__ == '__main__':
     unittest.main()
