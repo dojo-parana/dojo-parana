@@ -6,14 +6,19 @@ from telefone import Telefone
 
 class TestTelefone(unittest.TestCase):
     def setUp(self):
-        pass
+        self.telefone = Telefone()
 
     def tearDown(self):
         pass
 
     def test_classe_telefone_existe(self):
-        telefone = Telefone()
-        self.assertTrue(telefone)
+        self.assertTrue(self.telefone)
+
+    def test_entrada_telefone(self):
+        self.assertEqual(
+            "ABC",
+            self.telefone.ler_entrada("ABC")
+        )
 
 
 if __name__ == '__main__':
