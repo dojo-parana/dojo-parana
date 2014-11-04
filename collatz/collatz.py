@@ -3,9 +3,9 @@
 
 class Collatz():
    def retorna_sequencia(self, valor):
-       if valor == 2:
-           return (2,1)
-       elif valor == 4:
-           return (4,2,1)
-       else:
-           return (8,4,2,1)
+       res=[]
+       while valor != 1:
+           res.append(valor)
+           valor = valor/2
+       res.append(1)
+       return tuple(res)

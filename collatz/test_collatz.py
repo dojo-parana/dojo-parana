@@ -14,8 +14,11 @@ class TestCollatz(unittest.TestCase):
     def test_quatro_retorna_quatro_dois_um(self):
         self.assertEqual(Collatz().retorna_sequencia(4), (4,2,1))
 
-    def test_retorna_sequencia(self):
+    def test_oito_retorna_oito_quatro_dois_um(self):
         self.assertEqual(Collatz().retorna_sequencia(8), (8,4,2,1))
+
+    def test_dezesseis_retorna_dezesseis_oito_quatro_dois_um(self):
+        self.assertEqual(Collatz().retorna_sequencia(16), (16,8,4,2,1))
 
 if __name__ == '__main__':
     unittest.main()
