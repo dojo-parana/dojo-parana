@@ -6,6 +6,10 @@ class Collatz():
        res=[]
        while valor != 1:
            res.append(valor)
-           valor = valor/2
+
+           if valor % 2 == 0:
+              valor = valor/2
+           else:
+              valor = (valor * 3) + 1
        res.append(1)
        return tuple(res)
