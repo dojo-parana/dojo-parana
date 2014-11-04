@@ -2,8 +2,10 @@
 # coding=utf-8
 
 class Collatz():
-    def get_sequence(self, valor):
-        return (2,1)
-
-    def busca_sequencia_quatro(self, valor):
-        return (4,2,1)
+   def retorna_sequencia(self, valor):
+       if valor == 2:
+           return (2,1)
+       elif valor == 4:
+           return (4,2,1)
+       else:
+           return (8,4,2,1)
