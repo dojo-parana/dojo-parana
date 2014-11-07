@@ -28,3 +28,7 @@ class Collatz(int):
                 maior = sequencia
 
         return maior
+
+if __name__ == '__main__':
+    collatz = Collatz(1000000)
+    print(collatz.maior_sequencia())
