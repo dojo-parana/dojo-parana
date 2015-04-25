@@ -3,6 +3,23 @@
 
 import unittest
 
+def testa_leitura(texto):
+    print(texto)
+    return 'Babaca'
+
+def ler_frase(ler=input):
+    '''
+
+    >>> teste = 'a'
+    >>> print(teste)
+    a
+    >>> print(ler_frase(testa_leitura))
+    Escrever a frase:
+    Babaca
+    '''
+    recebe_frase = ler('Escrever a frase: ')
+    return recebe_frase
+
 
 class TestaTeclado(unittest.TestCase):
     def testa_frase_a(self):
@@ -31,6 +48,8 @@ class TestaTeclado(unittest.TestCase):
     def testa_frase_ce(self):
         self.assertEqual(teclas('ce'), '22233')
 
+    def testa_ler(self):
+        self.assertEqual(teclas(ler_frase(testa_leitura)), '2222222222')
 
 def teclas(frase):
     retorno = []
@@ -52,4 +71,6 @@ def teclas(frase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    recebe_frase = ler_frase()
+    print(teclas(recebe_frase))
+
