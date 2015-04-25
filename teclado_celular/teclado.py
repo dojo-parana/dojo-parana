@@ -23,17 +23,20 @@ class TestaTeclado(unittest.TestCase):
     def testa_duas_letras(self):
         self.assertEqual(teclas('Da'), '32')
 
+    def testa_frase_ce(self):
+        self.assertEqual(teclas('ce'), '22233')
+
 
 def teclas(frase):
     retorno = []
-    dicio = {'A': '2', 'B': '22', 'C': '222', 'D': '3'}
+    dicio = {'A': '2', 'B': '22', 'C': '222', 'D': '3' , 'E': '33'}
 
     fraseM = frase.upper()
     #for letra in fraseM:
 
     retorno = ''
     for letra in fraseM:
-        retorno = retorno+dicio[letra]
+        retorno = retorno + dicio.get(letra,'')
 
     return retorno
 
