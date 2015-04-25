@@ -20,8 +20,13 @@ class TestaTeclado(unittest.TestCase):
         self.assertEqual(teclas('d'), '3')
         self.assertEqual(teclas('D'), '3')
 
+    def testa_frase_f(self):
+        self.assertEqual(teclas('f'), '333')
+        self.assertEqual(teclas('F'), '333')
+
     def testa_duas_letras(self):
         self.assertEqual(teclas('Da'), '32')
+
 
     def testa_frase_ce(self):
         self.assertEqual(teclas('ce'), '22233')
@@ -29,7 +34,7 @@ class TestaTeclado(unittest.TestCase):
 
 def teclas(frase):
     retorno = []
-    dicio = {'A': '2', 'B': '22', 'C': '222', 'D': '3' , 'E': '33'}
+    dicio = {'A': '2', 'B': '22', 'C': '222', 'D': '3' , 'E': '33', 'F': '333'}
 
     fraseM = frase.upper()
     #for letra in fraseM:
