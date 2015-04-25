@@ -3,6 +3,7 @@
 
 import unittest
 
+
 class TestaTeclado(unittest.TestCase):
     def testa_frase_a(self):
         self.assertEqual(teclas('a'), '2')
@@ -27,23 +28,27 @@ class TestaTeclado(unittest.TestCase):
     def testa_duas_letras(self):
         self.assertEqual(teclas('Da'), '32')
 
-
     def testa_frase_ce(self):
         self.assertEqual(teclas('ce'), '22233')
 
 
 def teclas(frase):
     retorno = []
-    dicio = {'A': '2', 'B': '22', 'C': '222', 'D': '3' , 'E': '33', 'F': '333'}
+    dicio = {
+        'A': '2',
+        'B': '22',
+        'C': '222',
+        'D': '3',
+        'E': '33',
+        'F': '333'
+    }
 
-    fraseM = frase.upper()
-    #for letra in fraseM:
+    frase_maiuscula = frase.upper()
 
-    retorno = ''
-    for letra in fraseM:
-        retorno = retorno + dicio.get(letra,'')
+    for letra in frase_maiuscula:
+        retorno.append(dicio.get(letra, ''))
 
-    return retorno
+    return ''.join(retorno)
 
 
 if __name__ == '__main__':
