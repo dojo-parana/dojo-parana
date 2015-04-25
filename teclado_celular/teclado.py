@@ -21,17 +21,21 @@ class TestaTeclado(unittest.TestCase):
         self.assertEqual(teclas('D'), '3')
 
 def teclas(frase):
+    retorno = []
     if frase.upper() == 'A':
-        return "2"
+        retorno.append("2")
 
     if frase.upper() == 'B':
-        return "22"
+        retorno.append("22")
 
     if frase.upper() == 'C':
-        return "222"
+        retorno.append("222")
 
     if frase.upper() == 'D':
-        return "3"
+        retorno.append("3")
+
+    return ''.join(retorno)
+
 
 if __name__ == '__main__':
     unittest.main()
