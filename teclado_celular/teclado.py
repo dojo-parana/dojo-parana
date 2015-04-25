@@ -16,6 +16,9 @@ class TestaTeclado(unittest.TestCase):
         self.assertEqual(teclas('c'), '222')
         self.assertEqual(teclas('C'), '222')
 
+    def testa_frase_d(self):
+        self.assertEqual(teclas('d'), '3')
+        self.assertEqual(teclas('D'), '3')
 
 def teclas(frase):
     if frase.upper() == 'A':
@@ -26,6 +29,9 @@ def teclas(frase):
 
     if frase.upper() == 'C':
         return "222"
+
+    if frase.upper() == 'D':
+        return "3"
 
 if __name__ == '__main__':
     unittest.main()
