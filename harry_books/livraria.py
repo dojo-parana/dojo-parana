@@ -18,4 +18,6 @@ class Compras(object):
             self._total *= 0.9
         elif self.quantidade == 4:
             self._total *= 0.85
+        elif self.quantidade == 5:
+            self._total *= 0.80
         return self._total
