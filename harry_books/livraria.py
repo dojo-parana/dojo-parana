@@ -10,8 +10,6 @@ class Compras(object):
 
     @property
     def total(self):
-
-
         desconto = 1 - ((self.quantidade - 1) * 0.05)
 
         if desconto < 0.8:

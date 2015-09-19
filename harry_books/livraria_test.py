@@ -39,9 +39,5 @@ class TestCompras(unittest.TestCase):
         self.assertEqual(compras.total, ((compras.quantidade * compras.preco)*0.80))
 
 
-
-
-
-
 if __name__ == '__main__':
     unittest.main()	
