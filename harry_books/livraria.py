@@ -10,14 +10,12 @@ class Compras(object):
 
     @property
     def total(self):
-        self._total = self.quantidade * self.preco
 
-        if self.quantidade == 2:
-            self._total *= 0.95
-        elif self.quantidade == 3:
-            self._total *= 0.9
-        elif self.quantidade == 4:
-            self._total *= 0.85
-        elif self.quantidade >= 5:
-            self._total *= 0.80
+
+        desconto = 1 - ((self.quantidade - 1) * 0.05)
+
+        if desconto < 0.8:
+            desconto = 0.8
+
+        self._total = self.quantidade * self.preco * desconto
         return self._total
