@@ -20,11 +20,17 @@ class TestCompras(unittest.TestCase):
 
     def test_valor_da_compra_2_livros(self):
         compras = Compras(2)
-        self.assertEqual(compras.total, (84*0.95))
+        self.assertEqual(compras.total, ((compras.quantidade * compras.preco)*0.95))
 
     def test_valor_da_compra_3_livros(self):
         compras = Compras(3)
-        self.assertEqual(compras.total, ((42*3)*0.90))
+        self.assertEqual(compras.total, ((compras.quantidade * compras.preco)*0.90))
+
+    def test_valor_da_compra_4_livros(self):
+        compras = Compras(4)
+        self.assertEqual(compras.total, ((compras.quantidade * compras.preco)*0.85))
+
+
 
 if __name__ == '__main__':
     unittest.main()	
