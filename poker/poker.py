@@ -13,7 +13,8 @@ class PokerTest(unittest.TestCase):
         self.assertEquals(poker('5D 8C 9S JS AC', '2C 5C 7D 8S QH'), 'Jogador 1')
     def test_poker3 (self):
         self.assertEquals(poker('2D 9C AS AH AC', '3D 6D 7D TD QD'), 'Jogador 2') 
-
+    def test_poker4 (self):
+        self.assertEquals(poker('4D 6S 9H QH QC', '3D 6D 7H QD QS'), 'Jogador 1')
 if __name__ == '__main__':
     unittest.main()
     
