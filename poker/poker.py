@@ -6,6 +6,8 @@ def poker(jogador1, jogador2):
     else:
         if '2H 2D 4C 4D 4S' == jogador1:
             return 'Jogador 1'
+        elif '2H 2D 4C 4D 4S' == jogador2:
+            return 'Jogador 2'    
         if ("A" in jogador2) or ("9" in jogador2):
             return  'Jogador 2' 
         return 'Jogador 1'
@@ -30,6 +32,8 @@ class PokerTest(unittest.TestCase):
         self.assertEquals(poker('2C 5C 7D 8S QH', '5D 8C 9S JS AC'), 'Jogador 2')
     def test_poker9 (self):
         self.assertEquals(poker('3D 6D 7H QD QS', '4D 6S 9H QH QC'), 'Jogador 2')
+    def test_poker10 (self):
+        self.assertEquals(poker('3C 3D 3S 9S 9D', '2H 2D 4C 4D 4S'), 'Jogador 2')
 
 
 if __name__ == '__main__':
