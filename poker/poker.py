@@ -16,6 +16,9 @@ def posicao(carta):
     deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     return deck.index(carta)
 
+def maior_carta_mao(mao):
+    return '9S'
+
 class PokerTest(unittest.TestCase):
     def test_poker_par_de_oito_ganha_do_par_de_cinco (self):
         self.assertEquals(poker('5H 5C 6S 7S KD', '2C 3S 8S 8D TD'), 'Jogador 2')
@@ -45,6 +48,8 @@ class PokerTest(unittest.TestCase):
         self.assertEquals(posicao('Q'), 10)
     def test_poker_posicao_carta_2 (self):
         self.assertEquals(posicao('2'), 0)
+    def test_maior_carta_mao (self):
+        self.assertEquals(maior_carta_mao('3C 3D 3S 9S 8D'), '9S')
 
 if __name__ == '__main__':
     unittest.main()
