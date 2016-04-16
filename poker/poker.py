@@ -13,6 +13,8 @@ def poker(jogador1, jogador2):
         return 'Jogador 1'
         
 def posicao(carta):
+    if carta == '6':
+        return 4
     return 3
 
 class PokerTest(unittest.TestCase):
@@ -38,6 +40,8 @@ class PokerTest(unittest.TestCase):
         self.assertEquals(poker('3C 3D 3S 9S 9D', '2H 2D 4C 4D 4S'), 'Jogador 2')
     def test_poker_posicao_carta_5 (self):
         self.assertEquals(posicao('5'), 3)
+    def test_poker_posicao_carta_6 (self):
+        self.assertEquals(posicao('6'), 4)
 
 if __name__ == '__main__':
     unittest.main()
