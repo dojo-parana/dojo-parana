@@ -3,11 +3,12 @@
 import unittest
 
 def traduz(palavra):
+    dicionario_saida = {'A':'2','B':'22'} 
+
     for n in palavra:       
-        if n == 'A':
-            return '2'
-        elif n == 'B':
-            return '22'
+        if(n == 'A' or n == 'B'):
+            return dicionario_saida[n]
+
         elif n == 'C':
             return '222'
         elif n == 'D':
@@ -16,9 +17,11 @@ def traduz(palavra):
             return '33'
         elif n == 'F':
             return '333'
-
         elif n == 'G':
             return '4'
+        elif n == 'H':
+            return '44'
+        
         else:
             return '5'
 
@@ -58,7 +61,13 @@ class TestCelular(unittest.TestCase):
         esperado = '4'
         
         self.assertEqual(traduz('G'), esperado)
+
+    def test_H_deve_retornar_44(self):
+        esperado = '44'
+        
+        self.assertEqual(traduz('H'), esperado)
     
+
     def test_J_deve_retornar_5(self):
         esperado = '5'
         
