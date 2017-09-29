@@ -14,9 +14,10 @@ def traduz(palavra):
         'W':'9','X':'99','Y':'999', 'Z': '9999',
         ' ':'0'
 } 
-
+    resultado = []
     for n in palavra:       
-        return dicionario_saida[n]
+        resultado.append(dicionario_saida[n])
+    return "".join(resultado)
 
 class TestCelular(unittest.TestCase):
     def test_A_deve_retornar_2(self):
