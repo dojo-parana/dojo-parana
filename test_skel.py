@@ -11,7 +11,8 @@ def traduz(palavra):
         'M':'6','N':'66','O':'666',
         'P':'7','Q':'77','R':'777', 'S': '7777',
         'T':'8','U':'88','V':'888',
-        'W':'9','X':'99','Y':'999', 'Z': '9999'
+        'W':'9','X':'99','Y':'999', 'Z': '9999',
+        ' ':'0'
 } 
 
     for n in palavra:       
@@ -119,6 +120,11 @@ class TestCelular(unittest.TestCase):
     def test_Z_deve_retornar_9999(self):
         esperado = '9999'
         self.assertEqual(traduz('Z'), esperado)
+
+    def test_espaco_deve_retornar_0(self):
+        esperado = '0'
+        self.assertEqual(traduz(' '), esperado)
+
 
 if __name__ == '__main__':
     unittest.main()
