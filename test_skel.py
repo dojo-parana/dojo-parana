@@ -125,6 +125,10 @@ class TestCelular(unittest.TestCase):
         esperado = '0'
         self.assertEqual(traduz(' '), esperado)
 
+    def test_AD_deve_retornar_23(self):
+        esperado = '23'
+        self.assertEqual(traduz("AD"), esperado)
+
 
 if __name__ == '__main__':
     unittest.main()
