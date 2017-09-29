@@ -13,10 +13,16 @@ def traduz(palavra):
         'T':'8','U':'88','V':'888',
         'W':'9','X':'99','Y':'999', 'Z': '9999',
         ' ':'0'
-} 
-    resultado = []
-    for n in palavra:       
+    }
+
+    resultado = ['']
+    
+    for n in palavra:
+        if resultado[-1]:
+            if resultado[-1][0] == dicionario_saida[n][0]:
+                resultado.append('_')
         resultado.append(dicionario_saida[n])
+
     return "".join(resultado)
 
 class TestCelular(unittest.TestCase):
@@ -129,6 +135,18 @@ class TestCelular(unittest.TestCase):
     def test_AD_deve_retornar_23(self):
         esperado = '23'
         self.assertEqual(traduz("AD"), esperado)
+
+    def test_AA_deve_retornar_2_2(self):
+        esperado = '2_2'
+        self.assertEqual(traduz("AA"), esperado)
+
+    def test_final(self):
+        esperado =(
+            '77773367_7773302_222337777_'
+            '777766606660366656667889999'
+            '_9999555337777'
+        )
+        self.assertEqual(traduz("SEMPRE ACESSO O DOJOPUZZLES"), esperado)
 
 
 if __name__ == '__main__':
