@@ -7,8 +7,10 @@ def traduz(palavra):
         return '2'
     elif palavra[0] == 'D':
         return '3'
-    else:
+    elif palavra[0] == 'G':
         return '4'
+    else:
+        return '5'
 
 class TestCelular(unittest.TestCase):
     def test_A_deve_retornar_2(self):
@@ -26,6 +28,10 @@ class TestCelular(unittest.TestCase):
         
         self.assertEqual(traduz('G'), esperado)
     
+    def test_J_deve_retornar_5(self):
+        esperado = '5'
+        
+        self.assertEqual(traduz('J'), esperado)
 
 if __name__ == '__main__':
     unittest.main()
