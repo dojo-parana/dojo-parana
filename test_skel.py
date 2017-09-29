@@ -8,7 +8,8 @@ def traduz(palavra):
         'D':'3','E':'33','F':'333',
         'G':'4','H':'44','I':'444',
         'J':'5','K':'55','L':'555',
-        'M':'6','N':'66','O':'666',} 
+        'M':'6','N':'66','O':'666',
+        'P':'7','Q':'77','R':'777', 'S': '7777'} 
 
     for n in palavra:       
         return dicionario_saida[n]
@@ -71,6 +72,9 @@ class TestCelular(unittest.TestCase):
     def test_O_deve_retornar_666(self):
         esperado = '666'
         self.assertEqual(traduz('O'), esperado)
+    def test_P_deve_retornar_7(self):
+        esperado = '7'
+        self.assertEqual(traduz('P'), esperado)
 
 if __name__ == '__main__':
     unittest.main()
