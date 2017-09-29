@@ -14,6 +14,9 @@ def traduz(palavra):
             return '3'
         elif n == 'E':
             return '33'
+        elif n == 'F':
+            return '333'
+
         elif n == 'G':
             return '4'
         else:
@@ -44,6 +47,12 @@ class TestCelular(unittest.TestCase):
         esperado = '33'
         
         self.assertEqual(traduz('E'), esperado)
+
+    def test_F_deve_retornar_333(self):
+        esperado = '333'
+        
+        self.assertEqual(traduz('F'), esperado)
+
         
     def test_G_deve_retornar_4(self):
         esperado = '4'
