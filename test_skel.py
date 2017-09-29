@@ -9,7 +9,10 @@ def traduz(palavra):
         'G':'4','H':'44','I':'444',
         'J':'5','K':'55','L':'555',
         'M':'6','N':'66','O':'666',
-        'P':'7','Q':'77','R':'777', 'S': '7777'} 
+        'P':'7','Q':'77','R':'777', 'S': '7777',
+        'T':'8','U':'88','V':'888',
+        'W':'9','X':'99','Y':'999', 'Z': '9999'
+} 
 
     for n in palavra:       
         return dicionario_saida[n]
@@ -72,9 +75,50 @@ class TestCelular(unittest.TestCase):
     def test_O_deve_retornar_666(self):
         esperado = '666'
         self.assertEqual(traduz('O'), esperado)
+    
     def test_P_deve_retornar_7(self):
         esperado = '7'
         self.assertEqual(traduz('P'), esperado)
+
+    def test_Q_deve_retornar_77(self):
+        esperado = '77'
+        self.assertEqual(traduz('Q'), esperado)
+
+    def test_R_deve_retornar_777(self):
+        esperado = '777'
+        self.assertEqual(traduz('R'), esperado)
+
+    def test_S_deve_retornar_7777(self):
+        esperado = '7777'
+        self.assertEqual(traduz('S'), esperado)
+
+    def test_T_deve_retornar_8(self):
+        esperado = '8'
+        self.assertEqual(traduz('T'), esperado)
+
+    def test_U_deve_retornar_88(self):
+        esperado = '88'
+        self.assertEqual(traduz('U'), esperado)
+
+    def test_V_deve_retornar_88(self):
+        esperado = '888'
+        self.assertEqual(traduz('V'), esperado)
+
+    def test_W_deve_retornar_9(self):
+        esperado = '9'
+        self.assertEqual(traduz('W'), esperado)
+
+    def test_X_deve_retornar_99(self):
+        esperado = '99'
+        self.assertEqual(traduz('X'), esperado)
+
+    def test_Y_deve_retornar_999(self):
+        esperado = '999'
+        self.assertEqual(traduz('Y'), esperado)
+
+    def test_Z_deve_retornar_9999(self):
+        esperado = '9999'
+        self.assertEqual(traduz('Z'), esperado)
 
 if __name__ == '__main__':
     unittest.main()
