@@ -1,0 +1,29 @@
+Ata do dojo 29 09 2017
+
+Participantes do FTSL
+
+Problemas: Buracos em branco, Celular*, Progressão aritimética.
+
+Linguagem: Python
+
+Pontos positivos:
+  - Conhecer TDD.
+  - Conhecer python.
+  - Integração do grupo.
+  - Pair programming.
+  - Foi possível utilizar vários recursos básicos da linguagem.
+  - Utilizar controle de versão e disponibilizar a solução.
+
+Pontos negativos: 
+  - Teclado atrapalha.
+  - Barulho na sala ao lado.
+  - Sala inadequada, laboratório com computadores atrapalham a interação.
+  - Projetor estava muito escuro.
+  - Dificuldade de programar em python.
+  - Barulho do computador.
+  - Usar uma IDE, ao invés de usar o gedit.
+  - Canetas estavam sem tinta.
+  - Grupo estava tímido, falando um pouco baixo.
+  - Faltou comida.
+  - Faltou mostrar mais funcionalidades na linguagens.
+
