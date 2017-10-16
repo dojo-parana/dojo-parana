@@ -27,8 +27,13 @@ def traduz(palavra):
 
 class TestCelular(unittest.TestCase):
     def test_A_deve_retornar_2(self):
-        esperado = '2'
-        self.assertEqual(traduz('A'), esperado)
+        dados = (
+            ('2','A'),
+            ('22', 'B'),
+        )
+        for dado in dados:
+            with self.subTest(dado=dado):
+                self.assertEqual(traduz(dado[1]), dado[0])
     
     def test_B_deve_retornar_22(self):
         esperado = '22'
